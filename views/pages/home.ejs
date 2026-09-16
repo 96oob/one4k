@@ -103,15 +103,7 @@
       "name": "How does the one4k reseller program work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The one4k reseller program gives you a dedicated TiviPanel management dashboard to create and manage subscriptions for your own clients. You purchase credits starting from 10 credits at €210. Each credit activates one subscriber account. There are no monthly fees and credits never expire."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the TIVI10 discount code?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TIVI10 is a promotional discount code that applies a €10 reduction on the 12-month Premium+ plan, reducing the price from €65 to €55. Enter the code when ordering via WhatsApp or email to activate the discount."
+        "text": "The one4k reseller program gives you a dedicated one4k management dashboard to create and manage subscriptions for your own clients. You purchase credits starting from 10 credits at €210. Each credit activates one subscriber account. There are no monthly fees and credits never expire."
       }
     },
     {
@@ -687,12 +679,12 @@ button{border:none;cursor:pointer;background:none}
 .form-label{font-family:'Oswald',sans-serif;font-size:.68rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
 .form-input,.form-select{width:100%;height:44px;padding:0 14px;border-radius:var(--r-md);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);color:#fff;font-family:'DM Sans',sans-serif;font-size:.88rem;outline:none;transition:all .22s ease;-webkit-appearance:none}
 .form-input::placeholder{color:var(--muted)}.form-select option{color:#fff;background:#0E1128}
-.form-input:focus,.form-select:focus{border-color:rgba(123,92,255,.48);background:rgba(123,92,255,.07);box-shadow:0 0 0 3px rgba(123,92,255,.10)}
-.payment-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
-.pay-opt{padding:9px 6px;border-radius:9px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;transition:all .2s}
+.payment-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+@media(max-width:480px){.payment-grid{grid-template-columns:repeat(3,1fr)}}
+.pay-opt{padding:9px 4px;border-radius:9px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;transition:all .2s}
 .pay-opt:hover{border-color:rgba(123,92,255,.28);background:rgba(123,92,255,.06)}
 .pay-opt.selected{border-color:rgba(123,92,255,.48);background:rgba(123,92,255,.10)}
-.pay-icon{font-size:1.15rem}.pay-label{font-size:.58rem;font-weight:600;letter-spacing:.04em;color:var(--muted);text-transform:uppercase;text-align:center}
+.pay-icon{font-size:1.15rem;display:flex;align-items:center;justify-content:center;height:28px}.pay-label{font-size:.56rem;font-weight:600;letter-spacing:.03em;color:var(--muted);text-transform:uppercase;text-align:center;line-height:1.2}
 .pay-opt.selected .pay-label{color:var(--soft)}
 .mprice-block{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-radius:14px;background:linear-gradient(135deg,rgba(123,92,255,.09),rgba(240,64,200,.06));border:1px solid rgba(255,255,255,.09);gap:10px}
 .mprice-label{font-family:'Oswald',sans-serif;font-size:.65rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
@@ -1165,7 +1157,7 @@ html,body{max-width:100%;overflow-x:hidden;}
         </div>
         <div class="rs2-text-block">
           <p class="rs2-overline"><span class="rs2-overline-dot" aria-hidden="true"></span>Partner Program</p>
-          <h2 class="rs2-title">Are You a Reseller? <span>Access TiviPanel</span></h2>
+          <h2 class="rs2-title">Are You a Reseller? <span>Access one4k Panel</span></h2>
           <p class="rs2-desc">Manage IPTV subscriptions, track credits and grow your streaming business — all from one powerful reseller dashboard.</p>
         </div>
         <div class="rs2-pills">
@@ -1204,11 +1196,6 @@ html,body{max-width:100%;overflow-x:hidden;}
         <p class="plan-duration">1 Month</p>
         <h3 class="plan-name">Starter</h3>
         <div class="plan-price"><span class="plan-price-currency">€</span><span class="plan-price-amount">15</span><span class="plan-price-period">/month</span></div>
-        <div class="plan-gift" style="background:rgba(64,207,255,.07);border-color:rgba(64,207,255,.22);padding:8px 11px;">
-  <i class="fas fa-mobile-screen" style="font-size:.8rem;color:var(--cyan);flex-shrink:0;" aria-hidden="true"></i>
-  <span style="flex:1;font-size:.76rem;font-weight:500;color:var(--soft);line-height:1.3;">App Activation <span style="color:var(--muted);font-weight:400;">— not included</span></span>
-  <span style="font-family:'Oswald',sans-serif;font-size:.85rem;font-weight:700;color:#fff;background:var(--grad);border-radius:7px;padding:3px 9px;white-space:nowrap;">+&#8364;8</span>
-</div>
         <div class="plan-sep" aria-hidden="true"></div>
         <ul class="plan-features" aria-label="Plan features">
           <li class="pf"><i class="fas fa-check pf-check" aria-hidden="true"></i><span><span class="pf-bold">High-Performance Server</span></span></li>
@@ -1230,11 +1217,6 @@ html,body{max-width:100%;overflow-x:hidden;}
         <p class="plan-duration">3 Months</p>
         <h3 class="plan-name">Classic</h3>
         <div class="plan-price"><span class="plan-price-currency">€</span><span class="plan-price-amount">25</span><span class="plan-price-period">/3 months</span></div>
-        <div class="plan-gift" style="background:rgba(64,207,255,.07);border-color:rgba(64,207,255,.22);padding:8px 11px;">
-  <i class="fas fa-mobile-screen" style="font-size:.8rem;color:var(--cyan);flex-shrink:0;" aria-hidden="true"></i>
-  <span style="flex:1;font-size:.76rem;font-weight:500;color:var(--soft);line-height:1.3;">App Activation <span style="color:var(--muted);font-weight:400;">— not included</span></span>
-  <span style="font-family:'Oswald',sans-serif;font-size:.85rem;font-weight:700;color:#fff;background:var(--grad);border-radius:7px;padding:3px 9px;white-space:nowrap;">+&#8364;8</span>
-</div>
         <div class="plan-sep" aria-hidden="true"></div>
         <ul class="plan-features">
           <li class="pf"><i class="fas fa-check pf-check" aria-hidden="true"></i><span><span class="pf-bold">High-Performance Server</span></span></li>
@@ -1256,11 +1238,6 @@ html,body{max-width:100%;overflow-x:hidden;}
         <p class="plan-duration">6 Months</p>
         <h3 class="plan-name">Pro</h3>
         <div class="plan-price"><span class="plan-price-currency">€</span><span class="plan-price-amount">45</span><span class="plan-price-period">/6 months</span></div>
-        <div class="plan-gift" style="background:rgba(64,207,255,.07);border-color:rgba(64,207,255,.22);padding:8px 11px;">
-  <i class="fas fa-mobile-screen" style="font-size:.8rem;color:var(--cyan);flex-shrink:0;" aria-hidden="true"></i>
-  <span style="flex:1;font-size:.76rem;font-weight:500;color:var(--soft);line-height:1.3;">App Activation <span style="color:var(--muted);font-weight:400;">— not included</span></span>
-  <span style="font-family:'Oswald',sans-serif;font-size:.85rem;font-weight:700;color:#fff;background:var(--grad);border-radius:7px;padding:3px 9px;white-space:nowrap;">+&#8364;8</span>
-</div>
         <div class="plan-sep" aria-hidden="true"></div>
         <ul class="plan-features">
           <li class="pf"><i class="fas fa-check pf-check" aria-hidden="true"></i><span><span class="pf-bold">High-Performance Server</span></span></li>
@@ -1282,7 +1259,6 @@ html,body{max-width:100%;overflow-x:hidden;}
         <p class="plan-duration">12 Months</p>
         <h3 class="plan-name">Premium+</h3>
         <div class="plan-price"><span class="plan-price-currency">€</span><span class="plan-price-amount">65</span><span class="plan-price-period">/year</span></div>
-        <p class="plan-coupon-note"><i class="fas fa-tag" aria-hidden="true"></i> Use code <strong style="letter-spacing:.05em">TIVI10</strong> — save €10!</p>
         <div class="plan-gift"><i class="fas fa-gift" aria-hidden="true"></i> Free Player Activation — Hot IPTV + IBO Pro</div>
         <div class="plan-sep" aria-hidden="true"></div>
         <ul class="plan-features">
@@ -1304,7 +1280,7 @@ html,body{max-width:100%;overflow-x:hidden;}
     <div class="plan-secure">
       <span><i class="fas fa-lock" aria-hidden="true"></i> Secure Payments</span>
       <span>&#183;</span>
-      <span>PayPal · Wise · Western Union · Binance · IBAN · Cash Plus · Ria · MoneyGram</span>
+      <span>PayPal · Binance · Cash Plus · Debit or Credit Card · Bank Transfer</span>
     </div>
   </div>
 </section>
@@ -1441,10 +1417,9 @@ html,body{max-width:100%;overflow-x:hidden;}
       <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>Which devices are compatible with one4k?</span><i class="fas fa-chevron-down faq-arrow" aria-hidden="true"></i></div><div class="faq-a"><span>one4k works on Smart TVs (Samsung, LG), Amazon Firestick, Android TV, Nvidia Shield, iOS (iPhone &amp; iPad), Android smartphones &amp; tablets, MAG boxes, Windows PC, Mac, web browsers, TiviMate, IPTV Smarters Pro, and Xbox.</span></div></div>
       <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>How fast is activation after payment?</span><i class="fas fa-chevron-down faq-arrow" aria-hidden="true"></i></div><div class="faq-a"><span>Standard subscriptions are activated in under 60 seconds. Reseller panel accounts are created within 5–10 minutes of payment confirmation. Our team is available 24/7 via WhatsApp for the fastest possible setup.</span></div></div>
       <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>What video quality does one4k support?</span><i class="fas fa-chevron-down faq-arrow" aria-hidden="true"></i></div><div class="faq-a"><span>one4k supports SD (480p), HD (720p), Full HD (1080p), 4K Ultra HD (2160p) and 8K (4320p) on the 12-month Premium+ plan. A minimum of 25 Mbps is recommended for 4K content. A stable wired connection gives the best experience.</span></div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>What payment methods do you accept?</span><i class="fas fa-chevron-down faq-arrow" aria-hidden="true"></i></div><div class="faq-a"><span>We accept PayPal (Friends &amp; Family), Wise, Western Union, MoneyGram, Ria, Cash Plus, Binance (crypto), and IBAN bank transfer. All payments are handled securely and your financial information is never stored on our servers.</span></div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>What payment methods do you accept?</span><i class="fas fa-chevron-down faq-arrow" aria-hidden="true"></i></div><div class="faq-a"><span>We accept PayPal, Binance (crypto), Cash Plus, Debit or Credit Card, and Bank Transfer. All payments are handled securely and your financial information is never stored on our servers.</span></div></div>
       <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>Is there a money-back guarantee?</span><i class="fas fa-chevron-down faq-arrow" aria-hidden="true"></i></div><div class="faq-a"><span>Yes. All one4k subscriptions include a 15-day satisfaction guarantee. If our support team cannot resolve persistent technical issues within 48 hours, we will provide a full refund or credit.</span></div></div>
       <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>How does the reseller program work?</span><i class="fas fa-chevron-down faq-arrow" aria-hidden="true"></i></div><div class="faq-a"><span>Our reseller program gives you a dedicated management panel to create and activate IPTV subscriptions for your own clients. Packages start from 10 credits at €210. Your panel is created within 5–10 minutes. Full 24/7 support is included. Visit our Reseller page for full details.</span></div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>What is the TIVI10 discount code?</span><i class="fas fa-chevron-down faq-arrow" aria-hidden="true"></i></div><div class="faq-a"><span>TIVI10 applies a €10 discount on the 12-month Premium+ plan, reducing the price from €65 to €55. Mention the code when ordering via WhatsApp or email and it will be applied automatically.</span></div></div>
       <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>What internet speed do I need?</span><i class="fas fa-chevron-down faq-arrow" aria-hidden="true"></i></div><div class="faq-a"><span>Minimum recommendations: SD — 5 Mbps, HD — 10 Mbps, Full HD — 15 Mbps, 4K — 25 Mbps, 8K — 50+ Mbps. A wired ethernet connection is preferred over Wi-Fi for the most stable streaming experience.</span></div></div>
       <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>Does one4k include adult content?</span><i class="fas fa-chevron-down faq-arrow" aria-hidden="true"></i></div><div class="faq-a"><span>one4k is a general-purpose streaming service for entertainment, sports, news, movies and international programming. Adult channels are not included in our standard retail subscriptions. Reseller panel operators have access to an extended content library through our wholesale infrastructure; it is the responsibility of each operator to comply with applicable local regulations regarding content distribution.</span></div></div>
     </div>
@@ -1469,7 +1444,7 @@ html,body{max-width:100%;overflow-x:hidden;}
       </div>
       <div class="seo-block">
         <h2 class="seo-h2">Reseller &amp; B2B Program</h2>
-        <p class="seo-p">Launch your own streaming business with our <strong>TiviPanel reseller program</strong>. Get a dedicated management dashboard, flexible credit packages starting at €210, and wholesale access to our full streaming library. Panel activated in under 10 minutes. <a href="/reseller" style="color:var(--cyan)">Learn more &#8594;</a></p>
+        <p class="seo-p">Launch your own streaming business with our <strong>one4k reseller program</strong>. Get a dedicated management dashboard, flexible credit packages starting at €210, and wholesale access to our full streaming library. Panel activated in under 10 minutes. <a href="/reseller" style="color:var(--cyan)">Learn more &#8594;</a></p>
       </div>
     </div>
   </div>
@@ -1502,7 +1477,7 @@ html,body{max-width:100%;overflow-x:hidden;}
         </div>
         <div class="footer-col">
           <p class="footer-col-title">Quick Links</p>
-          <a href="https://tivipanel.net/" target="_blank" rel="noopener noreferrer" class="footer-link"><i class="fas fa-chevron-right" aria-hidden="true"></i>TiviPanel.net</a>
+          <a href="/reseller" class="footer-link"><i class="fas fa-chevron-right" aria-hidden="true"></i>one4k Panel</a>
           <a href="/channel" class="footer-link"><i class="fas fa-chevron-right" aria-hidden="true"></i>Channel List</a>
           <a href="/apps-one4k" class="footer-link"><i class="fas fa-chevron-right" aria-hidden="true"></i>Download Apps</a>
           <a href="/" class="footer-link"><i class="fas fa-chevron-right" aria-hidden="true"></i>Home</a>
@@ -1550,14 +1525,11 @@ html,body{max-width:100%;overflow-x:hidden;}
         </div>
         <div class="form-group"><label class="form-label">Payment Method <span style="color:#f87171">*</span></label>
           <div class="payment-grid">
-            <div class="pay-opt" onclick="selectPay(this,'PayPal Friends')"><div class="pay-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><path d="M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 00-.607-.541c-.013.076-.026.175-.041.254-.59 3.025-2.566 6.082-8.558 6.082H9.833l-1.312 8.322h3.875c.524 0 .968-.381 1.05-.9l.044-.278.835-5.293.054-.291c.082-.519.526-.9 1.05-.9h.662c4.296 0 7.658-1.747 8.641-6.797.412-2.108.166-3.873-1.51-4.658z" fill="#009cde"/><path d="M5.998 0C5.474 0 5.026.382 4.944.901L1.837 20.597a.641.641 0 00.633.74h4.606l1.162-7.358-.036.228c.082-.519.522-.9 1.046-.9h2.19c4.298 0 7.664-1.747 8.647-6.797.03-.149.054-.294.077-.437-1.252-.663-2.836-.973-4.79-.973H5.998z" fill="#012169"/></svg></div><div class="pay-label">PayPal</div></div>
-  <div class="pay-opt" onclick="selectPay(this,'Wise')"><div class="pay-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="26" height="26"><polygon points="50,8 22,82 50,68 78,82" fill="#9FE870"/><polygon points="50,8 22,82 50,52" fill="#6DC947"/><polygon points="50,8 78,82 50,52" fill="#48A02E"/></svg></div><div class="pay-label">Wise</div></div>
-  <div class="pay-opt" onclick="selectPay(this,'Western Union')"><div class="pay-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 28" width="46" height="26"><rect width="52" height="28" rx="5" fill="#FFDD00"/><text x="26" y="20" font-family="Arial Black,Helvetica,sans-serif" font-size="12" font-weight="900" fill="#1A1A1A" text-anchor="middle">WU</text></svg></div><div class="pay-label">W. Union</div></div>
-  <div class="pay-opt" onclick="selectPay(this,'MoneyGram')"><div class="pay-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 28" width="52" height="26"><rect width="60" height="28" rx="5" fill="#E31837"/><text x="30" y="19" font-family="Arial Black,Helvetica,sans-serif" font-size="7" font-weight="900" fill="#fff" text-anchor="middle" letter-spacing="-0.3">MoneyGram</text></svg></div><div class="pay-label">MoneyGram</div></div>
-  <div class="pay-opt" onclick="selectPay(this,'Ria')"><div class="pay-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 28" width="44" height="26"><rect width="50" height="28" rx="5" fill="#FF5800"/><text x="25" y="20" font-family="Arial Black,Helvetica,sans-serif" font-size="14" font-weight="900" fill="#fff" text-anchor="middle">Ria</text></svg></div><div class="pay-label">Ria</div></div>
-  <div class="pay-opt" onclick="selectPay(this,'Cash Plus')"><div class="pay-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 28" width="50" height="26"><rect width="58" height="28" rx="5" fill="#00843D"/><text x="29" y="19.5" font-family="Arial Black,Helvetica,sans-serif" font-size="8" font-weight="900" fill="#fff" text-anchor="middle">Cash Plus</text></svg></div><div class="pay-label">Cash Plus</div></div>
-  <div class="pay-opt" onclick="selectPay(this,'Binance')"><div class="pay-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26" fill="#F3BA2F"><path d="M16 0l-3.2 3.2 3.2 3.2 3.2-3.2zm-8 8L4.8 11.2 8 14.4l3.2-3.2zm16 0l-3.2 3.2 3.2 3.2 3.2-3.2zM16 8l-6.4 6.4 3.2 3.2 3.2-3.2 3.2 3.2 3.2-3.2zm-12.8 8L0 19.2l3.2 3.2 3.2-3.2zm25.6 0l-3.2 3.2 3.2 3.2 3.2-3.2zM16 16l-3.2 3.2 3.2 3.2 3.2-3.2zM8 24l-3.2 3.2 3.2 3.2 3.2-3.2zm16 0l-3.2 3.2 3.2 3.2 3.2-3.2zM16 24l-3.2 3.2 3.2 3.2 3.2-3.2z"/></svg></div><div class="pay-label">Binance</div></div>
-  <div class="pay-opt" onclick="selectPay(this,'IBAN Transfer')"><div class="pay-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 28" width="44" height="26"><rect width="50" height="28" rx="5" fill="#2C3E7A"/><text x="25" y="20" font-family="Arial Black,Helvetica,sans-serif" font-size="11" font-weight="900" fill="#fff" text-anchor="middle" letter-spacing="0.5">IBAN</text></svg></div><div class="pay-label">IBAN</div></div>
+            <div class="pay-opt" onclick="selectPay(this,'PayPal')"><div class="pay-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><path d="M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 00-.607-.541c-.013.076-.026.175-.041.254-.59 3.025-2.566 6.082-8.558 6.082H9.833l-1.312 8.322h3.875c.524 0 .968-.381 1.05-.9l.044-.278.835-5.293.054-.291c.082-.519.526-.9 1.05-.9h.662c4.296 0 7.658-1.747 8.641-6.797.412-2.108.166-3.873-1.51-4.658z" fill="#009cde"/><path d="M5.998 0C5.474 0 5.026.382 4.944.901L1.837 20.597a.641.641 0 00.633.74h4.606l1.162-7.358-.036.228c.082-.519.522-.9 1.046-.9h2.19c4.298 0 7.664-1.747 8.647-6.797.03-.149.054-.294.077-.437-1.252-.663-2.836-.973-4.79-.973H5.998z" fill="#012169"/></svg></div><div class="pay-label">PayPal</div></div>
+            <div class="pay-opt" onclick="selectPay(this,'Binance')"><div class="pay-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26" fill="#F3BA2F"><path d="M16 0l-3.2 3.2 3.2 3.2 3.2-3.2zm-8 8L4.8 11.2 8 14.4l3.2-3.2zm16 0l-3.2 3.2 3.2 3.2 3.2-3.2zM16 8l-6.4 6.4 3.2 3.2 3.2-3.2 3.2 3.2 3.2-3.2zm-12.8 8L0 19.2l3.2 3.2 3.2-3.2zm25.6 0l-3.2 3.2 3.2 3.2 3.2-3.2zM16 16l-3.2 3.2 3.2 3.2 3.2-3.2zM8 24l-3.2 3.2 3.2 3.2 3.2-3.2zm16 0l-3.2 3.2 3.2 3.2 3.2-3.2zM16 24l-3.2 3.2 3.2 3.2 3.2-3.2z"/></svg></div><div class="pay-label">Binance</div></div>
+            <div class="pay-opt" onclick="selectPay(this,'Cash Plus')"><div class="pay-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 28" width="50" height="26"><rect width="58" height="28" rx="5" fill="#00843D"/><text x="29" y="19.5" font-family="Arial Black,Helvetica,sans-serif" font-size="8" font-weight="900" fill="#fff" text-anchor="middle">Cash Plus</text></svg></div><div class="pay-label">Cash Plus</div></div>
+            <div class="pay-opt" onclick="selectPay(this,'Debit or Credit Card')"><div class="pay-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="3" ry="3"/><line x1="1" y1="10" x2="23" y2="10"/><line x1="5" y1="15" x2="8" y2="15"/></svg></div><div class="pay-label">Card</div></div>
+            <div class="pay-opt" onclick="selectPay(this,'Bank Transfer')"><div class="pay-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v4M12 14v4M16 14v4"/></svg></div><div class="pay-label">Bank Transfer</div></div>
 
           </div>
         </div>
