@@ -27,7 +27,10 @@ class EmailService {
   }
 
   async sendEmail({ to, subject, html, text }) {
-    const from = process.env.EMAIL_FROM || '"one4k Official IPTV" <TVBillingTeam@gmail.com>';
+    if (!this.transporter && process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+      this.initTransporter();
+    }
+    const from = process.env.EMAIL_FROM || '"one4k Official IPTV" <4oolmoo@gmail.com>';
 
     if (!this.transporter) {
       console.log('\n================== [DEV EMAIL PREVIEW] ==================');
