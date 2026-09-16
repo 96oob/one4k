@@ -108,7 +108,7 @@
 
     /* ══ PAGE HERO ══ */
     .ch-hero{
-      padding:64px 5% 60px;
+      padding:64px 5% 50px;
       position:relative;overflow:hidden;
       border-bottom:1px solid rgba(255,255,255,.055);
     }
@@ -161,8 +161,195 @@
     .ch-stat-n{font-family:'Oswald',sans-serif;font-size:1.15rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
     .ch-stat-l{font-size:.62rem;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;margin-top:2px}
 
+    /* ═══ TRIAL SECTION ═══ */
+    .trial-section{
+      padding:60px 5% 70px;
+      position:relative;
+      overflow:hidden;
+    }
+    .trial-wrap{
+      max-width:1100px;
+      margin:0 auto;
+      position:relative;
+      z-index:1;
+    }
+    .trial-card{
+      border-radius:28px;
+      background:linear-gradient(155deg, rgba(14,17,40,.94) 0%, rgba(20,16,58,.92) 50%, rgba(10,12,30,.96) 100%);
+      border:1px solid rgba(123,92,255,.30);
+      box-shadow:0 30px 80px rgba(0,0,0,.60), 0 0 60px rgba(123,92,255,.14);
+      padding:52px 40px 48px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .trial-card::before{
+      content:"";position:absolute;top:-50%;left:50%;transform:translateX(-50%);
+      width:650px;height:350px;
+      background:radial-gradient(ellipse,rgba(56,208,255,.18),rgba(128,64,224,.15) 45%,transparent 70%);
+      filter:blur(40px);pointer-events:none;
+    }
+    .trial-badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:6px 16px;border-radius:var(--r-pill);
+      background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.28);
+      font-size:.78rem;font-weight:600;color:#6ee7b7;letter-spacing:.04em;
+      margin-bottom:20px;
+    }
+    .trial-live-dot{
+      width:7px;height:7px;border-radius:50%;
+      background:#10b981;box-shadow:0 0 8px #10b981;
+      animation:blink 1.8s infinite;
+    }
+    .trial-title{
+      font-family:'Oswald',sans-serif;
+      font-size:clamp(1.8rem,4vw,2.9rem);
+      font-weight:700;line-height:1.15;
+      text-transform:uppercase;color:#fff;
+      margin-bottom:14px;
+    }
+    .trial-title span{
+      background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .trial-desc{
+      font-size:1rem;line-height:1.8;color:var(--muted);
+      max-width:68ch;margin:0 auto 36px;font-weight:300;
+    }
+    .trial-perks{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+      margin-bottom:40px;
+    }
+    .trial-perk{
+      background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+      border-radius:16px;padding:18px 14px;text-align:center;
+      transition:all .25s ease;
+    }
+    .trial-perk:hover{
+      background:rgba(255,255,255,.07);border-color:rgba(123,92,255,.35);
+      transform:translateY(-3px);
+    }
+    .trial-perk-icon{
+      font-size:1.4rem;margin-bottom:8px;display:inline-block;
+    }
+    .trial-perk-title{
+      font-family:'Oswald',sans-serif;font-size:.9rem;font-weight:600;color:#fff;
+      text-transform:uppercase;letter-spacing:.03em;margin-bottom:4px;
+    }
+    .trial-perk-sub{
+      font-size:.72rem;color:var(--muted);line-height:1.4;
+    }
+    .trial-actions{
+      display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;
+      margin-bottom:20px;
+    }
+    .trial-btn{
+      display:inline-flex;align-items:center;gap:12px;
+      padding:16px 28px;border-radius:14px;
+      font-family:'DM Sans',sans-serif;font-size:.96rem;font-weight:700;
+      text-decoration:none;cursor:pointer;border:none;
+      transition:all .28s var(--ease);
+      position:relative;overflow:hidden;
+    }
+    .trial-btn-wa{
+      background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);
+      color:#fff;
+      box-shadow:0 10px 30px rgba(37,211,102,.35);
+    }
+    .trial-btn-wa:hover{
+      transform:translateY(-2px);
+      box-shadow:0 14px 40px rgba(37,211,102,.50);
+      filter:brightness(1.08);
+    }
+    .trial-btn-em{
+      background:linear-gradient(135deg,#7B5CFF 0%,#F040C8 100%);
+      color:#fff;
+      box-shadow:0 10px 30px rgba(123,92,255,.35);
+    }
+    .trial-btn-em:hover{
+      transform:translateY(-2px);
+      box-shadow:0 14px 40px rgba(240,64,200,.50);
+      filter:brightness(1.08);
+    }
+    .trial-btn-icon{font-size:1.25rem;}
+    .trial-btn-text{display:flex;flex-direction:column;text-align:left;}
+    .trial-btn-main{font-size:.96rem;font-weight:700;line-height:1.2;}
+    .trial-btn-sub{font-size:.70rem;font-weight:400;opacity:.88;margin-top:2px;}
+    .trial-note{
+      font-size:.78rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px;
+    }
+    .trial-note i{color:#34d399;}
+
+    /* ═══ MODAL STYLING ═══ */
+    .modal-overlay{
+      display:none;position:fixed;inset:0;z-index:10000;
+      background:rgba(4,6,18,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+      align-items:center;justify-content:center;padding:14px;
+    }
+    .modal-overlay.open{display:flex;}
+    .modal{
+      width:100%;max-width:500px;border-radius:26px;
+      background:linear-gradient(160deg,#0E1128,#12103A);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 40px 90px rgba(0,0,0,.60);
+      overflow:hidden;max-height:92vh;overflow-y:auto;
+    }
+    .modal::-webkit-scrollbar{width:4px;}
+    .modal::-webkit-scrollbar-thumb{background:rgba(255,255,255,.10);border-radius:4px;}
+    .modal-head{
+      padding:22px 22px 18px;
+      background:linear-gradient(135deg,rgba(123,92,255,.12),rgba(56,208,255,.08));
+      border-bottom:1px solid rgba(255,255,255,.07);
+      display:flex;align-items:flex-start;justify-content:space-between;gap:10px;
+    }
+    .modal-rocket{font-size:1.4rem;margin-bottom:5px;}
+    .modal-title{font-family:'Oswald',sans-serif;font-size:1.35rem;font-weight:700;text-transform:uppercase;color:#fff;}
+    .modal-plan-label{
+      display:inline-flex;align-items:center;padding:3px 11px;border-radius:var(--r-pill);
+      background:linear-gradient(120deg,#10b981,#059669);color:#fff;
+      font-family:'Oswald',sans-serif;font-size:.67rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-top:7px;
+    }
+    .modal-close{
+      width:32px;height:32px;border-radius:9px;
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);
+      color:var(--muted);cursor:pointer;display:grid;place-items:center;font-size:.85rem;flex-shrink:0;transition:all .2s;
+    }
+    .modal-close:hover{background:rgba(255,255,255,.10);color:#fff;}
+    .modal-body{padding:20px;}
+    .modal-form{display:flex;flex-direction:column;gap:12px;}
+    .form-group{display:flex;flex-direction:column;gap:6px;}
+    .form-label{font-size:.78rem;font-weight:600;color:var(--soft);}
+    .form-input,.form-select{
+      width:100%;height:44px;padding:0 14px;border-radius:10px;
+      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);
+      color:#fff;font-family:'DM Sans',sans-serif;font-size:.88rem;
+      outline:none;transition:border-color .2s,background .2s;
+    }
+    .form-input:focus,.form-select:focus{
+      border-color:var(--cyan);background:rgba(64,207,255,.06);
+    }
+    .form-select option{background:#0b0d1e;color:#fff;}
+    .contact-choice-label{font-size:.78rem;font-weight:600;color:var(--soft);margin-bottom:8px;}
+    .contact-choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px;}
+    .contact-btn{
+      height:50px;border-radius:12px;border:none;cursor:pointer;
+      display:flex;align-items:center;gap:10px;padding:0 14px;
+      font-family:'DM Sans',sans-serif;text-decoration:none;transition:all .2s;
+    }
+    .contact-btn-wa{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;}
+    .contact-btn-email{background:linear-gradient(135deg,#7B5CFF,#5B3FD0);color:#fff;}
+    .contact-btn:hover{filter:brightness(1.10);transform:translateY(-1px);}
+    .contact-btn-icon{font-size:1.15rem;flex-shrink:0;}
+    .contact-btn-text{display:flex;flex-direction:column;text-align:left;}
+    .contact-btn-title{font-size:.82rem;font-weight:700;}
+    .contact-btn-sub{font-size:.62rem;opacity:.85;}
+    .modal-security{
+      display:flex;align-items:center;justify-content:center;gap:5px;
+      font-size:.68rem;color:var(--muted);text-align:center;margin-top:4px;
+    }
+    .modal-security i{color:#34d399;}
+
     /* ══ FOOTER ══ */
-    .site-footer{width:100%;background:linear-gradient(180deg,var(--bg-3),#050812);border-top:1px solid rgba(255,255,255,.07);padding:64px 5% 0;position:relative;overflow:hidden;margin-top:60px;}
+    .site-footer{width:100%;background:linear-gradient(180deg,var(--bg-3),#050812);border-top:1px solid rgba(255,255,255,.07);padding:64px 5% 0;position:relative;overflow:hidden;margin-top:40px;}
     .footer-glow{position:absolute;left:20%;top:-10%;width:700px;height:300px;background:radial-gradient(ellipse,rgba(123,92,255,.08),transparent 65%);filter:blur(50px);pointer-events:none;}
     .footer-wrap{max-width:1300px;margin:0 auto;position:relative;z-index:1;}
     .footer-top{display:grid;grid-template-columns:auto 1fr;gap:60px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.06);align-items:flex-start;}
@@ -188,6 +375,9 @@
     .footer-bottom-link{font-size:.72rem;color:var(--muted);text-decoration:none;transition:color .2s ease;}
     .footer-bottom-link:hover{color:var(--soft);}
 
+    @media(max-width:960px){
+      .trial-perks{grid-template-columns:repeat(2,1fr);}
+    }
     @media(max-width:820px){
       .footer-links-group{grid-template-columns:1fr 1fr;}
       .footer-top{grid-template-columns:1fr;gap:36px;}
@@ -196,6 +386,10 @@
       .ch-hero{padding:40px 4% 36px;}
       .ch-stats{flex-wrap:wrap;border:none;gap:8px;background:transparent;}
       .ch-stat{flex:1;min-width:120px;border-radius:12px;border:1px solid rgba(255,255,255,.07);}
+      .trial-card{padding:36px 20px 32px;}
+      .trial-perks{grid-template-columns:1fr;}
+      .trial-btn{width:100%;justify-content:center;}
+      .contact-choice-grid{grid-template-columns:1fr;}
       .footer-links-group{grid-template-columns:1fr;}
       .footer-bottom{flex-direction:column;align-items:flex-start;}
     }
@@ -224,7 +418,7 @@
     </ul>
 
     <div class="nv-cta">
-      <a href="../contact-us/index.html#contact-form" class="nv-btn nv-btn-wa" onclick="goContact(event,'Technical Support')">
+      <a href="https://wa.me/447311129243" target="_blank" rel="noopener noreferrer" class="nv-btn nv-btn-wa">
         <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.476 2 2 6.477 2 12.001c0 1.765.46 3.467 1.34 4.969L2.046 22l5.182-1.359A9.944 9.944 0 0012 21.999c5.523 0 10-4.477 10-10S17.522 2 11.999 2z"/></svg>
         WhatsApp
       </a>
@@ -252,7 +446,7 @@
   </div>
   <div class="nv-drawer-div"></div>
   <div class="nv-drawer-btns">
-    <a href="../contact-us/index.html#contact-form" class="nv-drawer-btn nv-drawer-btn-wa" onclick="closeNav();goContact(event,'Technical Support')">
+    <a href="https://wa.me/447311129243" target="_blank" rel="noopener noreferrer" class="nv-drawer-btn nv-drawer-btn-wa">
       <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.476 2 2 6.477 2 12.001c0 1.765.46 3.467 1.34 4.969L2.046 22l5.182-1.359A9.944 9.944 0 0012 21.999c5.523 0 10-4.477 10-10S17.522 2 11.999 2z"/></svg>
       WhatsApp
     </a>
@@ -304,6 +498,178 @@
   </div>
 </section>
 
+<!-- ═══ FREE TRIAL CTA SECTION ═══ -->
+<section class="trial-section" aria-label="Get Free Trial to Explore Channels">
+  <div class="trial-wrap">
+    <div class="trial-card">
+      <div class="trial-badge">
+        <div class="trial-live-dot"></div>
+        100% Free • No Payment Info Needed • 24H Full Access
+      </div>
+
+      <h2 class="trial-title">
+        Want to Explore the Full Channel List? <br/>
+        <span>Get Your 24H Free Trial</span>
+      </h2>
+
+      <p class="trial-desc">
+        Test all 79,000+ live premium channels, live sports, and 249,000+ on-demand movies &amp; series in 4K &amp; 8K quality directly on your own device before subscribing. Instant setup via WhatsApp or Email.
+      </p>
+
+      <!-- 4 Pillars Grid -->
+      <div class="trial-perks">
+        <div class="trial-perk">
+          <div class="trial-perk-icon">📺</div>
+          <div class="trial-perk-title">79,000+ Live Channels</div>
+          <div class="trial-perk-sub">USA, UK, France, Arabic, Africa, Sports &amp; World</div>
+        </div>
+        <div class="trial-perk">
+          <div class="trial-perk-icon">🍿</div>
+          <div class="trial-perk-title">249,000+ VOD</div>
+          <div class="trial-perk-sub">Full 4K movie catalogue &amp; multi-audio series</div>
+        </div>
+        <div class="trial-perk">
+          <div class="trial-perk-icon">⚡</div>
+          <div class="trial-perk-title">Zero Buffering</div>
+          <div class="trial-perk-sub">Ultra-stable servers with anti-freeze technology</div>
+        </div>
+        <div class="trial-perk">
+          <div class="trial-perk-icon">📱</div>
+          <div class="trial-perk-title">All Devices</div>
+          <div class="trial-perk-sub">Firestick, Smart TV, Android, iOS, Windows &amp; MAG</div>
+        </div>
+      </div>
+
+      <!-- 2 Action Buttons -->
+      <div class="trial-actions">
+        <button class="trial-btn trial-btn-wa" onclick="openTrialModal('whatsapp')">
+          <i class="fab fa-whatsapp trial-btn-icon"></i>
+          <div class="trial-btn-text">
+            <span class="trial-btn-main">Get Free Trial via WhatsApp</span>
+            <span class="trial-btn-sub">Instant Setup • Ready in &lt; 2 mins</span>
+          </div>
+        </button>
+
+        <button class="trial-btn trial-btn-em" onclick="openTrialModal('email')">
+          <i class="fas fa-envelope trial-btn-icon"></i>
+          <div class="trial-btn-text">
+            <span class="trial-btn-main">Get Free Trial via Email</span>
+            <span class="trial-btn-sub">Credentials sent to your inbox</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="trial-note">
+        <i class="fas fa-shield-halved"></i>
+        <span>No credit card required. Free 24-hour full access pass for testing.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FREE TRIAL MODAL ═══ -->
+<div class="modal-overlay" id="trialModal" onclick="closeTrialModalOutside(event)" role="dialog" aria-modal="true" aria-label="Request Free Trial">
+  <div class="modal">
+    <div class="modal-head">
+      <div>
+        <div class="modal-rocket" aria-hidden="true">🚀</div>
+        <div class="modal-title">24H Free Trial</div>
+        <div style="font-size:.78rem;color:var(--muted);margin-top:3px;">Fill in details to receive your test line credentials</div>
+        <div class="modal-plan-label">100% FREE (0€)</div>
+      </div>
+      <button class="modal-close" onclick="closeTrialModal()" aria-label="Close trial form"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-form">
+        <div style="padding:10px 13px;border-radius:10px;background:rgba(64,207,255,.07);border:1px solid rgba(64,207,255,.14);font-size:.76rem;color:var(--soft);line-height:1.6;">
+          <i class="fas fa-circle-info" style="color:var(--cyan);margin-right:6px;" aria-hidden="true"></i>
+          <strong style="color:#fff;">Fast Track:</strong> Providing your <strong style="color:#fff;">WhatsApp number</strong> gives you the fastest activation under 2 minutes. ⚡
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="tName">Full Name <span style="color:var(--muted);font-size:.60rem;">(optional)</span></label>
+          <input type="text" class="form-input" id="tName" placeholder="Your name" autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="tEmail">Email Address <span style="color:#f87171">*</span></label>
+          <input type="email" class="form-input" id="tEmail" placeholder="your@email.com" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="tPhone">WhatsApp Number <span style="color:#f87171">*</span></label>
+          <input type="tel" class="form-input" id="tPhone" placeholder="+1 234 567 8900" required autocomplete="tel">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="tCountry">Country <span style="color:#f87171">*</span></label>
+          <select class="form-select" id="tCountry" required autocomplete="country">
+            <option value="">Select your country</option>
+            <option>🇳🇱 Netherlands</option>
+            <option>🇩🇪 Germany</option>
+            <option>🇧🇪 Belgium</option>
+            <option>🇫🇷 France</option>
+            <option>🇲🇦 Morocco</option>
+            <option>🇪🇸 Spain</option>
+            <option>🇬🇧 United Kingdom</option>
+            <option>🇨🇭 Switzerland</option>
+            <option>🇨🇦 Canada</option>
+            <option>🇺🇸 United States</option>
+            <option>🇨🇴 Colombia</option>
+            <option>🇦🇺 Australia</option>
+            <option>🇦🇪 United Arab Emirates</option>
+            <option>🇸🇦 Saudi Arabia</option>
+            <option>🇪🇬 Egypt</option>
+            <option>🇹🇳 Tunisia</option>
+            <option>🇩🇿 Algeria</option>
+            <option>🇯🇴 Jordan</option>
+            <option>🇱🇧 Lebanon</option>
+            <option>🇮🇶 Iraq</option>
+            <option>🌐 Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="tDevice">Device / App <span style="color:var(--muted);font-size:.60rem;">(optional)</span></label>
+          <select class="form-select" id="tDevice">
+            <option value="Amazon Firestick">Amazon Firestick (Downloader)</option>
+            <option value="Smart TV (Samsung / LG)">Smart TV (Samsung / LG)</option>
+            <option value="Android TV / Box">Android TV / Box / Nvidia Shield</option>
+            <option value="Apple (iPhone / iPad / Apple TV)">Apple (iPhone / iPad / Apple TV)</option>
+            <option value="Windows PC / Mac">Windows PC / Mac</option>
+            <option value="MAG Box / STB">MAG Box / STB Emulator</option>
+            <option value="TiviMate / Smarters">TiviMate / IPTV Smarters</option>
+            <option value="Other Device">Other Device</option>
+          </select>
+        </div>
+
+        <div>
+          <div class="contact-choice-label">Submit Free Trial Request via:</div>
+          <div class="contact-choice-grid">
+            <button class="contact-btn contact-btn-wa" onclick="submitTrial('whatsapp')">
+              <i class="fab fa-whatsapp contact-btn-icon"></i>
+              <span class="contact-btn-text">
+                <span class="contact-btn-title">WhatsApp</span>
+                <span class="contact-btn-sub">Fastest • &lt; 2 min</span>
+              </span>
+            </button>
+            <button class="contact-btn contact-btn-email" onclick="submitTrial('email')">
+              <i class="fas fa-envelope contact-btn-icon"></i>
+              <span class="contact-btn-text">
+                <span class="contact-btn-title">Email</span>
+                <span class="contact-btn-sub">TVBillingTeam@gmail.com</span>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <p class="modal-security"><i class="fas fa-lock" aria-hidden="true"></i> 100% Free • Your information is secure and confidential.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ════════ FOOTER ════════ -->
 <footer class="site-footer">
   <div class="footer-glow"></div>
@@ -346,7 +712,7 @@
           <p class="footer-col-title">Support</p>
           <a href="https://wa.me/447311129243" target="_blank" rel="noopener noreferrer" class="footer-link"><i class="fas fa-chevron-right" style="font-size:.55rem;opacity:.5;"></i>WhatsApp Support</a>
           <a href="https://t.me/IPTVsupport2026" target="_blank" rel="noopener noreferrer" class="footer-link"><i class="fas fa-chevron-right" style="font-size:.55rem;opacity:.5;"></i>Telegram Support</a>
-          <a href="../contact-us/index.html#contact-form" class="footer-link" onclick="goContact(event,'General Question')"><i class="fas fa-chevron-right" style="font-size:.55rem;opacity:.5;"></i>Email Support</a>
+          <a href="/contact-us" class="footer-link"><i class="fas fa-chevron-right" style="font-size:.55rem;opacity:.5;"></i>Email Support</a>
           <a href="../index.html#faq" class="footer-link"><i class="fas fa-chevron-right" style="font-size:.55rem;opacity:.5;"></i>FAQ &amp; Help</a>
           <a href="/reseller" class="footer-link"><i class="fas fa-chevron-right" style="font-size:.55rem;opacity:.5;"></i>Partner Program</a>
         </div>
@@ -364,14 +730,86 @@
 </footer>
 
 <script>
-  /* Navbar */
+  /* ═══ AUTO YEAR ═══ */
+  (function(){var y=new Date().getFullYear();document.querySelectorAll('.js-year').forEach(function(el){el.textContent=y;});})();
+
+  /* ═══ NAVBAR ═══ */
   function toggleNav(){
     var d=document.getElementById('nvDrawer'),h=document.getElementById('nvHam');
-    var o=d.classList.toggle('open');h.classList.toggle('open',o);
+    var o=d.classList.toggle('open');
+    h.classList.toggle('open',o);
+    h.setAttribute('aria-expanded',o?'true':'false');
+    document.body.style.overflow=o?'hidden':'';
   }
   function closeNav(){
     var d=document.getElementById('nvDrawer'),h=document.getElementById('nvHam');
     if(d)d.classList.remove('open');if(h)h.classList.remove('open');
+    if(h)h.setAttribute('aria-expanded','false');
+    document.body.style.overflow='';
+  }
+  document.addEventListener('click',function(e){
+    var d=document.getElementById('nvDrawer'),h=document.getElementById('nvHam');
+    if(d&&h&&d.classList.contains('open')&&!d.contains(e.target)&&!h.contains(e.target)){closeNav();}
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeNav();closeTrialModal();}});
+
+  /* ═══ FREE TRIAL MODAL ═══ */
+  function openTrialModal(preferredChannel){
+    var overlay=document.getElementById('trialModal');
+    overlay.classList.add('open');
+    document.body.style.overflow='hidden';
+    var m=overlay.querySelector('.modal');if(m)m.scrollTop=0;
+  }
+  function closeTrialModal(){
+    document.getElementById('trialModal').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function closeTrialModalOutside(e){
+    if(e.target===document.getElementById('trialModal')) closeTrialModal();
+  }
+
+  function submitTrial(channel){
+    var name=document.getElementById('tName').value.trim()||'Not provided';
+    var email=document.getElementById('tEmail').value.trim();
+    var phone=document.getElementById('tPhone').value.trim();
+    var country=document.getElementById('tCountry').value;
+    var device=document.getElementById('tDevice').value||'All Devices';
+
+    if(!email||!phone||!country){
+      alert('Please fill in your Email, WhatsApp number and Country.');
+      return;
+    }
+
+    // Send in background to Telegram & Google Sheets webhook
+    try {
+      fetch('/api/order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          plan: '24H Free Trial',
+          amount: '€0',
+          name: name,
+          email: email,
+          phone: phone,
+          country: country,
+          paymentMethod: 'Free Trial (' + device + ')',
+          channel: channel,
+          type: 'free_trial'
+        })
+      }).catch(function(err){ console.warn('Trial order log:', err); });
+    } catch(e){}
+
+    if(channel==='whatsapp'){
+      var msg='🚀 *New one4k Free Trial Request*\n\n📺 *Request:* 24-Hour Free Trial (Channel List Test)\n💰 *Price:* €0 (100% Free)\n👤 *Name:* '+name+'\n📧 *Email:* '+email+'\n📱 *WhatsApp:* '+phone+'\n🌍 *Country:* '+country+'\n📱 *Device/App:* '+device;
+      window.open('https://wa.me/447311129243?text='+encodeURIComponent(msg),'_blank');
+    }else{
+      var subj='one4k Free Trial Request — '+name+' ('+country+')';
+      var body='New one4k Free Trial Request\n\nRequest: 24-Hour Free Trial\nPrice: €0 (Free)\nName: '+name+'\nEmail: '+email+'\nWhatsApp: '+phone+'\nCountry: '+country+'\nDevice: '+device;
+      window.open('mailto:TVBillingTeam@gmail.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body),'_blank');
+    }
+
+    closeTrialModal();
+    alert('✅ Your Free Trial request has been received! Our team will send your test line credentials in under 2 minutes.');
   }
 </script>
 </div>
