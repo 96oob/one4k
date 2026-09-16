@@ -567,7 +567,7 @@ a{text-decoration:none;color:inherit}
       <div class="benefit-card">
         <div class="benefit-icon" style="background:linear-gradient(145deg,rgba(37,211,102,.15),rgba(37,211,102,.08));border:1px solid rgba(37,211,102,.20);color:#34d399"><i class="fas fa-dollar-sign"></i></div>
         <div class="benefit-title">Flexible Credit Packages</div>
-        <div class="benefit-desc">Choose from 3 credit packages starting at $350 for 120 credits. Each credit activates one subscription. The more you buy, the more you save per credit.</div>
+        <div class="benefit-desc">Choose from 3 credit packages starting at €350 for 120 credits. Each credit activates one subscription. The more you buy, the more you save per credit.</div>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon" style="background:linear-gradient(145deg,rgba(240,64,200,.15),rgba(240,64,200,.08));border:1px solid rgba(240,64,200,.20);color:#f0abfc"><i class="fas fa-satellite-dish"></i></div>
@@ -608,11 +608,11 @@ a{text-decoration:none;color:inherit}
     </div>
     <div class="packages-grid">
 
-      <!-- 120 Credits / $350 -->
+      <!-- 120 Credits / €350 -->
       <div class="pkg-card">
         <div class="pkg-head-banner" style="--band:linear-gradient(135deg,rgba(85,126,255,.14),rgba(64,207,255,.08));--glow-c:rgba(64,207,255,.20)">
           <div class="pkg-band-glow" aria-hidden="true"></div>
-          <div class="pkg-big-price">$350</div>
+          <div class="pkg-big-price">€350</div>
           <div class="pkg-big-credits">120 Credits</div>
           <div class="pkg-desc-text">
             A panel with username and password that we provide to you so you can manage (add/renew/delete) IPTV accounts
@@ -651,12 +651,12 @@ a{text-decoration:none;color:inherit}
         </div>
       </div>
 
-      <!-- 240 Credits / $550 (Popular) -->
+      <!-- 240 Credits / €550 (Popular) -->
       <div class="pkg-card popular">
         <div class="pkg-badge badge-pop">🔥 Most Popular</div>
         <div class="pkg-head-banner" style="--band:linear-gradient(135deg,rgba(240,64,200,.15),rgba(123,92,255,.12));--glow-c:rgba(240,64,200,.28)">
           <div class="pkg-band-glow" aria-hidden="true"></div>
-          <div class="pkg-big-price">$550</div>
+          <div class="pkg-big-price">€550</div>
           <div class="pkg-big-credits">240 Credits</div>
           <div class="pkg-desc-text">
             A panel with username and password that we provide to you so you can manage (add/renew/delete) IPTV accounts
@@ -695,12 +695,12 @@ a{text-decoration:none;color:inherit}
         </div>
       </div>
 
-      <!-- 360 Credits / $850 (Best Value) -->
+      <!-- 360 Credits / €850 (Best Value) -->
       <div class="pkg-card best">
         <div class="pkg-badge badge-best">⭐ Best Value</div>
         <div class="pkg-head-banner" style="--band:linear-gradient(135deg,rgba(64,207,255,.14),rgba(123,92,255,.10));--glow-c:rgba(64,207,255,.24)">
           <div class="pkg-band-glow" aria-hidden="true"></div>
-          <div class="pkg-big-price">$850</div>
+          <div class="pkg-big-price">€850</div>
           <div class="pkg-big-credits">360 Credits</div>
           <div class="pkg-desc-text">
             A panel with username and password that we provide to you so you can manage (add/renew/delete) IPTV accounts
@@ -825,18 +825,18 @@ a{text-decoration:none;color:inherit}
           <div class="pkg-pick-grid" id="pkgPickGrid">
             <div class="pkg-pick" onclick="pickPkg(this,120,350)" data-cr="120" data-price="350">
               <div class="pkg-pick-cr">120 Credits</div>
-              <div class="pkg-pick-price">$350</div>
+              <div class="pkg-pick-price">€350</div>
               <div class="pkg-pick-cpp">Starter Panel</div>
             </div>
             <div class="pkg-pick selected" onclick="pickPkg(this,240,550)" data-cr="240" data-price="550">
               <div class="pkg-pick-cr">240 Credits</div>
-              <div class="pkg-pick-price">$550</div>
+              <div class="pkg-pick-price">€550</div>
               <div class="pkg-pick-cpp">Growth Panel</div>
               <div class="pkg-pick-badge">🔥 Popular</div>
             </div>
             <div class="pkg-pick" onclick="pickPkg(this,360,850)" data-cr="360" data-price="850">
               <div class="pkg-pick-cr">360 Credits</div>
-              <div class="pkg-pick-price">$850</div>
+              <div class="pkg-pick-price">€850</div>
               <div class="pkg-pick-cpp">Enterprise Panel</div>
               <div class="pkg-pick-badge">⭐ Best Value</div>
             </div>
@@ -849,7 +849,7 @@ a{text-decoration:none;color:inherit}
               <div style="font-size:.82rem;color:var(--soft);margin-top:3px" id="pkgPickLabel">240 Credits — Reseller Panel</div>
             </div>
             <div style="text-align:right">
-              <div style="font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1" id="pkgPickTotal">$550</div>
+              <div style="font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1" id="pkgPickTotal">€550</div>
             </div>
           </div>
 
@@ -998,7 +998,7 @@ function pickPkg(el,cr,price){
   el.classList.add('selected');
   rsCr=cr; rsPrice=price;
   var label=cr+' Credits — Reseller Panel';
-  var amt='$'+price.toLocaleString();
+  var amt='€'+price.toLocaleString();
   document.getElementById('pkgPickLabel').textContent=label;
   document.getElementById('pkgPickTotal').textContent=amt;
 }
@@ -1013,14 +1013,14 @@ function rsOpenFromCard(cr,price){
   });
   // Update summary
   document.getElementById('pkgPickLabel').textContent=cr+' Credits — Reseller Panel';
-  document.getElementById('pkgPickTotal').textContent='$'+price.toLocaleString();
+  document.getElementById('pkgPickTotal').textContent='€'+price.toLocaleString();
   openResellerModal();
 }
 function openResellerModal(){
-  var label=rsCr+' Credits — $'+rsPrice.toLocaleString();
+  var label=rsCr+' Credits — €'+rsPrice.toLocaleString();
   document.getElementById('rsPkgLabel').textContent=label;
   document.getElementById('rsMpricePkg').textContent=rsCr+' Credits — Reseller Panel';
-  document.getElementById('rsMpriceAmt').textContent='$'+rsPrice.toLocaleString();
+  document.getElementById('rsMpriceAmt').textContent='€'+rsPrice.toLocaleString();
   // Reset form
   ['rsName','rsEmail','rsPhone','rsUser','rsPass'].forEach(function(id){
     var el=document.getElementById(id);if(el)el.value='';
@@ -1062,7 +1062,7 @@ function rsSubmitOrder(channel){
     alert('⚠️ Please fill in all required fields.');return;
   }
   if(!rsSelectedPay){alert('⚠️ Please select a payment method.');return;}
-  var pkg=rsCr+' Credits — $'+rsPrice.toLocaleString();
+  var pkg=rsCr+' Credits — €'+rsPrice.toLocaleString();
 
   // Background dispatch to Telegram Bot & Google Sheets (non-blocking)
   try {
@@ -1071,7 +1071,7 @@ function rsSubmitOrder(channel){
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         plan: 'Reseller: ' + pkg,
-        amount: '$' + rsPrice.toLocaleString(),
+        amount: '€' + rsPrice.toLocaleString(),
         name: name,
         email: email,
         phone: phone,
@@ -1137,7 +1137,7 @@ function rsSubmitOrder(channel){
     var lbl = document.getElementById('pkgPickLabel');
     var tot = document.getElementById('pkgPickTotal');
     if(lbl) lbl.textContent = rsCr + ' Credits — Reseller Panel';
-    if(tot) tot.textContent = '$' + price.toLocaleString();
+    if(tot) tot.textContent = '€' + price.toLocaleString();
     openResellerModal();
   }
 
@@ -1152,7 +1152,7 @@ function rsSubmitOrder(channel){
         <div class="rs-modal-icon" aria-hidden="true">🏪</div>
         <div class="rs-modal-title">Reseller Application</div>
         <div style="font-size:.78rem;color:var(--muted);margin-top:3px">Fill in your details to activate your panel</div>
-        <div class="rs-modal-pkg" id="rsPkgLabel">240 Credits — $550</div>
+        <div class="rs-modal-pkg" id="rsPkgLabel">240 Credits — €550</div>
       </div>
       <button class="rs-modal-close" onclick="closeRsModal()" aria-label="Close">
         <i class="fas fa-xmark" aria-hidden="true"></i>
@@ -1203,7 +1203,7 @@ function rsSubmitOrder(channel){
             <div class="rs-mprice-label">Total Due</div>
             <div class="rs-mprice-pkg" id="rsMpricePkg">240 Credits — Reseller Panel</div>
           </div>
-          <div><div class="rs-mprice-amt" id="rsMpriceAmt">$550</div></div>
+          <div><div class="rs-mprice-amt" id="rsMpriceAmt">€550</div></div>
         </div>
         <div>
           <div style="font-family:'Oswald',sans-serif;font-size:.68rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:9px">
