@@ -179,37 +179,36 @@ a{text-decoration:none;color:inherit}
 .benefit-desc{font-size:.82rem;color:var(--muted);line-height:1.7;position:relative;z-index:1}
 
 /* ══ CREDIT PACKAGES ══ */
-.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
 .pkg-card{border-radius:var(--r-xl);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);overflow:hidden;display:flex;flex-direction:column;transition:all .33s var(--ease);opacity:0;animation:fadeIn .5s var(--ease) forwards;position:relative}
-.pkg-card:nth-child(1){animation-delay:.05s}.pkg-card:nth-child(2){animation-delay:.10s}.pkg-card:nth-child(3){animation-delay:.15s}.pkg-card:nth-child(4){animation-delay:.20s}.pkg-card:nth-child(5){animation-delay:.25s}.pkg-card:nth-child(6){animation-delay:.30s}
-.pkg-card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.13);box-shadow:0 22px 48px rgba(0,0,0,.30)}
-.pkg-card.popular{background:linear-gradient(160deg,rgba(240,64,200,.10),rgba(123,92,255,.08));border-color:rgba(240,64,200,.28);box-shadow:0 0 0 1px rgba(240,64,200,.08)}
-.pkg-card.best{background:linear-gradient(160deg,rgba(64,207,255,.08),rgba(85,126,255,.06));border-color:rgba(64,207,255,.22)}
-.pkg-badge{position:absolute;top:13px;right:13px;padding:3px 11px;border-radius:var(--r-pill);font-family:'Oswald',sans-serif;font-size:.60rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+.pkg-card:nth-child(1){animation-delay:.05s}.pkg-card:nth-child(2){animation-delay:.10s}.pkg-card:nth-child(3){animation-delay:.15s}
+.pkg-card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.16);box-shadow:0 22px 48px rgba(0,0,0,.35)}
+.pkg-card.popular{background:linear-gradient(165deg,rgba(123,92,255,.12),rgba(14,17,40,.9));border-color:rgba(123,92,255,.35);box-shadow:0 0 0 1px rgba(123,92,255,.2),0 20px 45px rgba(123,92,255,.15)}
+.pkg-card.best{background:linear-gradient(165deg,rgba(64,207,255,.10),rgba(14,17,40,.9));border-color:rgba(64,207,255,.30)}
+.pkg-badge{position:absolute;top:13px;right:13px;padding:4px 12px;border-radius:var(--r-pill);font-family:'Oswald',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;z-index:2}
 .badge-pop{background:var(--grad);color:#fff;box-shadow:0 3px 12px rgba(240,64,200,.28)}
 .badge-best{background:rgba(64,207,255,.15);border:1px solid rgba(64,207,255,.28);color:var(--cyan)}
-.pkg-band{padding:26px 22px 20px;position:relative;overflow:hidden}
-.pkg-band::before{content:"";position:absolute;inset:0;background:var(--band);opacity:.8}
+.pkg-head-banner{padding:28px 24px 20px;border-bottom:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden}
+.pkg-head-banner::before{content:"";position:absolute;inset:0;background:var(--band);opacity:.85}
 .pkg-band-glow{position:absolute;top:-30%;right:-10%;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,var(--glow-c),transparent 65%);filter:blur(22px);animation:pulseGlow 3s ease-in-out infinite;pointer-events:none}
-.pkg-credits{font-family:'Oswald',sans-serif;font-size:2.6rem;font-weight:700;color:#fff;line-height:1;position:relative;z-index:1;margin-bottom:3px}
-.pkg-credit-label{font-family:'Oswald',sans-serif;font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);position:relative;z-index:1}
-.pkg-body{padding:18px 22px 22px;flex:1;display:flex;flex-direction:column;gap:14px}
-.pkg-price{display:flex;align-items:baseline;gap:3px}
-.pkg-price-cur{font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:600;color:var(--soft)}
-.pkg-price-amt{font-family:'Oswald',sans-serif;font-size:2.4rem;font-weight:700;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.pkg-price-per{font-size:.72rem;color:var(--muted);margin-left:3px}
-.pkg-per-credit{font-size:.72rem;color:var(--muted);margin-top:2px}
-.pkg-per-credit span{color:var(--cyan);font-weight:600}
-.pkg-divider{height:1px;background:rgba(255,255,255,.06)}
-.pkg-features{display:flex;flex-direction:column;gap:7px;flex:1}
-.pkg-feat{display:flex;align-items:center;gap:8px;font-size:.80rem;color:var(--soft)}
-.pkg-feat i{color:#34d399;font-size:.72rem;flex-shrink:0}
-.pkg-feat .bold{font-weight:600;color:var(--text)}
-.pkg-btn{width:100%;height:46px;border-radius:var(--r-md);font-family:'Oswald',sans-serif;font-size:.88rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .28s ease;border:none;cursor:pointer}
+.pkg-big-price{font-family:'Oswald',sans-serif;font-size:3.2rem;font-weight:700;line-height:1;color:#fff;margin-bottom:6px;letter-spacing:-0.02em;position:relative;z-index:1}
+.pkg-big-credits{font-family:'Oswald',sans-serif;font-size:1.4rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.02em;margin-bottom:10px;position:relative;z-index:1}
+.pkg-desc-text{font-size:.82rem;color:var(--muted);line-height:1.55;position:relative;z-index:1}
+.pkg-card-body{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column;gap:18px}
+.pkg-sec-title{font-family:'Oswald',sans-serif;font-size:.88rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.pkg-system-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:7px}
+.pkg-system-row{font-size:.82rem;color:var(--soft);display:flex;align-items:center;gap:8px;font-weight:500}
+.pkg-system-row i{color:var(--cyan);font-size:.70rem}
+.pkg-features-list{display:flex;flex-direction:column;gap:9px;flex:1}
+.pkg-feat-item{display:flex;align-items:center;gap:10px;font-size:.83rem;color:var(--soft)}
+.pkg-feat-item i{color:#34d399;font-size:.80rem;flex-shrink:0}
+.pkg-btn{width:100%;height:48px;border-radius:var(--r-md);font-family:'Oswald',sans-serif;font-size:.92rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .28s ease;border:none;cursor:pointer}
 .pkg-btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 24px rgba(123,92,255,.22)}
 .pkg-btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(240,64,200,.26)}
 .pkg-btn-outline{background:rgba(255,255,255,.05);color:var(--text);border:1px solid rgba(255,255,255,.11)}
 .pkg-btn-outline:hover{border-color:rgba(64,207,255,.34);background:rgba(64,207,255,.07)}
+.pkg-secure-note{font-size:.72rem;color:var(--muted);text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px}
+.pkg-secure-note i{color:#34d399;font-size:.70rem}
 
 /* ══ HOW IT WORKS ══ */
 .how-section{border-top:1px solid rgba(255,255,255,.055)}
@@ -536,7 +535,7 @@ a{text-decoration:none;color:inherit}
       <span class="rs-trust-pill"><i class="fas fa-shield-halved" style="color:#f472b6"></i> No Monthly Fees</span>
     </div>
     <div class="rs-hero-btns">
-      <button class="rs-btn rs-btn-primary" onclick="rsOpenFromCard(30,600)">
+      <button class="rs-btn rs-btn-primary" onclick="rsOpenFromCard(240,550)">
         <i class="fas fa-rocket" aria-hidden="true"></i> Start Reselling Now
       </button>
       <a href="https://wa.me/447311129243" target="_blank" rel="noopener" class="rs-btn rs-btn-ghost">
@@ -568,7 +567,7 @@ a{text-decoration:none;color:inherit}
       <div class="benefit-card">
         <div class="benefit-icon" style="background:linear-gradient(145deg,rgba(37,211,102,.15),rgba(37,211,102,.08));border:1px solid rgba(37,211,102,.20);color:#34d399"><i class="fas fa-dollar-sign"></i></div>
         <div class="benefit-title">Flexible Credit Packages</div>
-        <div class="benefit-desc">Choose from 6 credit packages starting at €210 for 10 credits. Each credit activates one subscription. The more you buy, the more you save per credit.</div>
+        <div class="benefit-desc">Choose from 3 credit packages starting at $350 for 120 credits. Each credit activates one subscription. The more you buy, the more you save per credit.</div>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon" style="background:linear-gradient(145deg,rgba(240,64,200,.15),rgba(240,64,200,.08));border:1px solid rgba(240,64,200,.20);color:#f0abfc"><i class="fas fa-satellite-dish"></i></div>
@@ -609,143 +608,134 @@ a{text-decoration:none;color:inherit}
     </div>
     <div class="packages-grid">
 
-      <!-- 10 Credits -->
+      <!-- 120 Credits / $350 -->
       <div class="pkg-card">
-        <div class="pkg-band" style="--band:linear-gradient(135deg,rgba(85,126,255,.12),rgba(64,207,255,.08));--glow-c:rgba(64,207,255,.20)">
+        <div class="pkg-head-banner" style="--band:linear-gradient(135deg,rgba(85,126,255,.14),rgba(64,207,255,.08));--glow-c:rgba(64,207,255,.20)">
           <div class="pkg-band-glow" aria-hidden="true"></div>
-          <div class="pkg-credits" style="position:relative;z-index:1">10</div>
-          <div class="pkg-credit-label" style="position:relative;z-index:1">Credits — Starter</div>
-        </div>
-        <div class="pkg-body">
-          <div class="pkg-price"><span class="pkg-price-cur">€</span><span class="pkg-price-amt">210</span></div>
-          <div class="pkg-per-credit">€<span>21</span> per credit</div>
-          <div class="pkg-divider"></div>
-          <div class="pkg-features">
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span><span class="bold">10 subscriber</span> activations</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Full one4k panel dashboard</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>79,000+ channels access</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>24/7 support included</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Credits never expire</span></div>
+          <div class="pkg-big-price">$350</div>
+          <div class="pkg-big-credits">120 Credits</div>
+          <div class="pkg-desc-text">
+            A panel with username and password that we provide to you so you can manage (add/renew/delete) IPTV accounts
           </div>
-          <button class="pkg-btn pkg-btn-outline" onclick="rsOpenFromCard(10,210)"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now</button>
+        </div>
+        <div class="pkg-card-body">
+          <div>
+            <div class="pkg-sec-title">Panel work system :</div>
+            <div class="pkg-system-box">
+              <div class="pkg-system-row"><i class="fas fa-arrow-right" aria-hidden="true"></i><span><strong>1 Months</strong> = 1 Credit</span></div>
+              <div class="pkg-system-row"><i class="fas fa-arrow-right" aria-hidden="true"></i><span><strong>12 Months</strong> = 12 Credits</span></div>
+              <div class="pkg-system-row"><i class="fas fa-arrow-right" aria-hidden="true"></i><span><strong>10 Years</strong> = 120 Credits</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="pkg-sec-title">What's included?</div>
+            <div class="pkg-features-list">
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>VPN Compatible</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>Custom DNS</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>AntiFreeze Technology</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>Custom Template</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>Add Unlimited Sub Resellers</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>Add &amp; Refund credit</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>NO IP lock Use Anywhere</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>Professional Support</span></div>
+            </div>
+          </div>
+          <div style="margin-top:auto">
+            <button class="pkg-btn pkg-btn-outline" onclick="rsOpenFromCard(120,350)">
+              <i class="fas fa-rocket" aria-hidden="true"></i> Get Started
+            </button>
+            <div class="pkg-secure-note">
+              <i class="fas fa-lock" aria-hidden="true"></i> Encrypted &amp; secure Payments
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- 20 Credits -->
-      <div class="pkg-card">
-        <div class="pkg-band" style="--band:linear-gradient(135deg,rgba(123,92,255,.14),rgba(85,56,208,.10));--glow-c:rgba(123,92,255,.22)">
-          <div class="pkg-band-glow" aria-hidden="true"></div>
-          <div class="pkg-credits" style="position:relative;z-index:1">20</div>
-          <div class="pkg-credit-label" style="position:relative;z-index:1">Credits — Growth</div>
-        </div>
-        <div class="pkg-body">
-          <div class="pkg-price"><span class="pkg-price-cur">€</span><span class="pkg-price-amt">410</span></div>
-          <div class="pkg-per-credit">€<span>20.50</span> per credit</div>
-          <div class="pkg-divider"></div>
-          <div class="pkg-features">
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span><span class="bold">20 subscriber</span> activations</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Full one4k panel dashboard</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>79,000+ channels access</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Priority support</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Credits never expire</span></div>
-          </div>
-          <button class="pkg-btn pkg-btn-outline" onclick="rsOpenFromCard(20,410)"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now</button>
-        </div>
-      </div>
-
-      <!-- 30 Credits — Popular -->
+      <!-- 240 Credits / $550 (Popular) -->
       <div class="pkg-card popular">
         <div class="pkg-badge badge-pop">🔥 Most Popular</div>
-        <div class="pkg-band" style="--band:linear-gradient(135deg,rgba(240,64,200,.15),rgba(123,92,255,.10));--glow-c:rgba(240,64,200,.25)">
+        <div class="pkg-head-banner" style="--band:linear-gradient(135deg,rgba(240,64,200,.15),rgba(123,92,255,.12));--glow-c:rgba(240,64,200,.28)">
           <div class="pkg-band-glow" aria-hidden="true"></div>
-          <div class="pkg-credits" style="position:relative;z-index:1">30</div>
-          <div class="pkg-credit-label" style="position:relative;z-index:1">Credits — Professional</div>
-        </div>
-        <div class="pkg-body">
-          <div class="pkg-price"><span class="pkg-price-cur">€</span><span class="pkg-price-amt">600</span></div>
-          <div class="pkg-per-credit">€<span>20.00</span> per credit</div>
-          <div class="pkg-divider"></div>
-          <div class="pkg-features">
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span><span class="bold">30 subscriber</span> activations</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Full one4k panel dashboard</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>79,000+ channels access</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Priority support 24/7</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Credits never expire</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Extended content library</span></div>
+          <div class="pkg-big-price">$550</div>
+          <div class="pkg-big-credits">240 Credits</div>
+          <div class="pkg-desc-text">
+            A panel with username and password that we provide to you so you can manage (add/renew/delete) IPTV accounts
           </div>
-          <button class="pkg-btn pkg-btn-primary" onclick="rsOpenFromCard(30,600)"><i class="fas fa-rocket" aria-hidden="true"></i> Order Now</button>
+        </div>
+        <div class="pkg-card-body">
+          <div>
+            <div class="pkg-sec-title">Panel work system :</div>
+            <div class="pkg-system-box">
+              <div class="pkg-system-row"><i class="fas fa-arrow-right" aria-hidden="true"></i><span><strong>1 Months</strong> = 1 Credit</span></div>
+              <div class="pkg-system-row"><i class="fas fa-arrow-right" aria-hidden="true"></i><span><strong>12 Months</strong> = 12 Credits</span></div>
+              <div class="pkg-system-row"><i class="fas fa-arrow-right" aria-hidden="true"></i><span><strong>10 Years</strong> = 120 Credits</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="pkg-sec-title">What's included?</div>
+            <div class="pkg-features-list">
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>VPN Compatible</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>Custom DNS</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>AntiFreeze Technology</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>Custom Template</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>Add Unlimited Sub Resellers</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>Add &amp; Refund credit</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>NO IP lock Use Anywhere</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>Professional Support</span></div>
+            </div>
+          </div>
+          <div style="margin-top:auto">
+            <button class="pkg-btn pkg-btn-primary" onclick="rsOpenFromCard(240,550)">
+              <i class="fas fa-rocket" aria-hidden="true"></i> Get Started
+            </button>
+            <div class="pkg-secure-note">
+              <i class="fas fa-lock" aria-hidden="true"></i> Encrypted &amp; secure Payments
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- 40 Credits -->
-      <div class="pkg-card">
-        <div class="pkg-band" style="--band:linear-gradient(135deg,rgba(249,115,22,.12),rgba(234,88,12,.08));--glow-c:rgba(249,115,22,.20)">
-          <div class="pkg-band-glow" aria-hidden="true"></div>
-          <div class="pkg-credits" style="position:relative;z-index:1">40</div>
-          <div class="pkg-credit-label" style="position:relative;z-index:1">Credits — Business</div>
-        </div>
-        <div class="pkg-body">
-          <div class="pkg-price"><span class="pkg-price-cur">€</span><span class="pkg-price-amt">800</span></div>
-          <div class="pkg-per-credit">€<span>20.00</span> per credit</div>
-          <div class="pkg-divider"></div>
-          <div class="pkg-features">
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span><span class="bold">40 subscriber</span> activations</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Full one4k panel dashboard</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>79,000+ channels access</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Priority support 24/7</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Credits never expire</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Extended content library</span></div>
-          </div>
-          <button class="pkg-btn pkg-btn-outline" onclick="rsOpenFromCard(40,800)"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now</button>
-        </div>
-      </div>
-
-      <!-- 50 Credits — Best Value -->
+      <!-- 360 Credits / $850 (Best Value) -->
       <div class="pkg-card best">
         <div class="pkg-badge badge-best">⭐ Best Value</div>
-        <div class="pkg-band" style="--band:linear-gradient(135deg,rgba(64,207,255,.12),rgba(85,126,255,.08));--glow-c:rgba(64,207,255,.22)">
+        <div class="pkg-head-banner" style="--band:linear-gradient(135deg,rgba(64,207,255,.14),rgba(123,92,255,.10));--glow-c:rgba(64,207,255,.24)">
           <div class="pkg-band-glow" aria-hidden="true"></div>
-          <div class="pkg-credits" style="position:relative;z-index:1">50</div>
-          <div class="pkg-credit-label" style="position:relative;z-index:1">Credits — Enterprise</div>
-        </div>
-        <div class="pkg-body">
-          <div class="pkg-price"><span class="pkg-price-cur">€</span><span class="pkg-price-amt">1,000</span></div>
-          <div class="pkg-per-credit">€<span>20.00</span> per credit</div>
-          <div class="pkg-divider"></div>
-          <div class="pkg-features">
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span><span class="bold">50 subscriber</span> activations</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Full one4k panel dashboard</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>79,000+ channels access</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Priority support 24/7</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Credits never expire</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Extended content library</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Dedicated account manager</span></div>
+          <div class="pkg-big-price">$850</div>
+          <div class="pkg-big-credits">360 Credits</div>
+          <div class="pkg-desc-text">
+            A panel with username and password that we provide to you so you can manage (add/renew/delete) IPTV accounts
           </div>
-          <button class="pkg-btn pkg-btn-primary" onclick="rsOpenFromCard(50,1000)"><i class="fas fa-crown" aria-hidden="true"></i> Order Now</button>
         </div>
-      </div>
-
-      <!-- 60 Credits -->
-      <div class="pkg-card">
-        <div class="pkg-band" style="--band:linear-gradient(135deg,rgba(52,211,153,.12),rgba(22,163,74,.08));--glow-c:rgba(52,211,153,.20)">
-          <div class="pkg-band-glow" aria-hidden="true"></div>
-          <div class="pkg-credits" style="position:relative;z-index:1">60</div>
-          <div class="pkg-credit-label" style="position:relative;z-index:1">Credits — Wholesale</div>
-        </div>
-        <div class="pkg-body">
-          <div class="pkg-price"><span class="pkg-price-cur">€</span><span class="pkg-price-amt">2,000</span></div>
-          <div class="pkg-per-credit">€<span style="color:#34d399">33.33</span> per credit <span style="font-size:.65rem;color:#34d399">★ Negotiable</span></div>
-          <div class="pkg-divider"></div>
-          <div class="pkg-features">
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span><span class="bold">60+ subscriber</span> activations</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Full one4k panel dashboard</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>79,000+ channels access</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Priority support 24/7</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Custom volume pricing</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Extended content library</span></div>
-            <div class="pkg-feat"><i class="fas fa-check" aria-hidden="true"></i><span>Dedicated account manager</span></div>
+        <div class="pkg-card-body">
+          <div>
+            <div class="pkg-sec-title">Panel work system :</div>
+            <div class="pkg-system-box">
+              <div class="pkg-system-row"><i class="fas fa-arrow-right" aria-hidden="true"></i><span><strong>1 Months</strong> = 1 Credit</span></div>
+              <div class="pkg-system-row"><i class="fas fa-arrow-right" aria-hidden="true"></i><span><strong>12 Months</strong> = 12 Credits</span></div>
+              <div class="pkg-system-row"><i class="fas fa-arrow-right" aria-hidden="true"></i><span><strong>10 Years</strong> = 120 Credits</span></div>
+            </div>
           </div>
-          <button class="pkg-btn pkg-btn-outline" onclick="rsOpenFromCard(60,2000)"><i class="fas fa-handshake" aria-hidden="true"></i> Contact for Quote</button>
+          <div>
+            <div class="pkg-sec-title">What's included?</div>
+            <div class="pkg-features-list">
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>VPN Compatible</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>Custom DNS</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>AntiFreeze Technology</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>Custom Template</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>Add Unlimited Sub Resellers</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>Add &amp; Refund credit</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>NO IP lock Use Anywhere</span></div>
+              <div class="pkg-feat-item"><i class="fas fa-check" aria-hidden="true"></i><span>Professional Support</span></div>
+            </div>
+          </div>
+          <div style="margin-top:auto">
+            <button class="pkg-btn pkg-btn-primary" onclick="rsOpenFromCard(360,850)">
+              <i class="fas fa-rocket" aria-hidden="true"></i> Get Started
+            </button>
+            <div class="pkg-secure-note">
+              <i class="fas fa-lock" aria-hidden="true"></i> Encrypted &amp; secure Payments
+            </div>
+          </div>
         </div>
       </div>
 
@@ -833,37 +823,22 @@ a{text-decoration:none;color:inherit}
           <div style="font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:6px">Select Your Package</div>
           <div style="font-size:.82rem;color:var(--muted);margin-bottom:20px">Choose the credit package that fits your business — then click Order Now to complete your application.</div>
           <div class="pkg-pick-grid" id="pkgPickGrid">
-            <div class="pkg-pick" onclick="pickPkg(this,10,210)" data-cr="10" data-price="210">
-              <div class="pkg-pick-cr">10 Credits</div>
-              <div class="pkg-pick-price">€210</div>
-              <div class="pkg-pick-cpp">€21/credit</div>
+            <div class="pkg-pick" onclick="pickPkg(this,120,350)" data-cr="120" data-price="350">
+              <div class="pkg-pick-cr">120 Credits</div>
+              <div class="pkg-pick-price">$350</div>
+              <div class="pkg-pick-cpp">Starter Panel</div>
             </div>
-            <div class="pkg-pick" onclick="pickPkg(this,20,410)" data-cr="20" data-price="410">
-              <div class="pkg-pick-cr">20 Credits</div>
-              <div class="pkg-pick-price">€410</div>
-              <div class="pkg-pick-cpp">€20.50/credit</div>
-            </div>
-            <div class="pkg-pick selected" onclick="pickPkg(this,30,600)" data-cr="30" data-price="600">
-              <div class="pkg-pick-cr">30 Credits</div>
-              <div class="pkg-pick-price">€600</div>
-              <div class="pkg-pick-cpp">€20/credit</div>
+            <div class="pkg-pick selected" onclick="pickPkg(this,240,550)" data-cr="240" data-price="550">
+              <div class="pkg-pick-cr">240 Credits</div>
+              <div class="pkg-pick-price">$550</div>
+              <div class="pkg-pick-cpp">Growth Panel</div>
               <div class="pkg-pick-badge">🔥 Popular</div>
             </div>
-            <div class="pkg-pick" onclick="pickPkg(this,40,800)" data-cr="40" data-price="800">
-              <div class="pkg-pick-cr">40 Credits</div>
-              <div class="pkg-pick-price">€800</div>
-              <div class="pkg-pick-cpp">€20/credit</div>
-            </div>
-            <div class="pkg-pick" onclick="pickPkg(this,50,1000)" data-cr="50" data-price="1000">
-              <div class="pkg-pick-cr">50 Credits</div>
-              <div class="pkg-pick-price">€1,000</div>
-              <div class="pkg-pick-cpp">€20/credit</div>
+            <div class="pkg-pick" onclick="pickPkg(this,360,850)" data-cr="360" data-price="850">
+              <div class="pkg-pick-cr">360 Credits</div>
+              <div class="pkg-pick-price">$850</div>
+              <div class="pkg-pick-cpp">Enterprise Panel</div>
               <div class="pkg-pick-badge">⭐ Best Value</div>
-            </div>
-            <div class="pkg-pick" onclick="pickPkg(this,60,2000)" data-cr="60" data-price="2000">
-              <div class="pkg-pick-cr">60+ Credits</div>
-              <div class="pkg-pick-price">€2,000</div>
-              <div class="pkg-pick-cpp">Negotiable</div>
             </div>
           </div>
 
@@ -871,10 +846,10 @@ a{text-decoration:none;color:inherit}
           <div class="pkg-pick-summary" id="pkgPickSummary">
             <div>
               <div style="font-family:'Oswald',sans-serif;font-size:.65rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)">Selected Package</div>
-              <div style="font-size:.82rem;color:var(--soft);margin-top:3px" id="pkgPickLabel">30 Credits — Reseller Panel</div>
+              <div style="font-size:.82rem;color:var(--soft);margin-top:3px" id="pkgPickLabel">240 Credits — Reseller Panel</div>
             </div>
             <div style="text-align:right">
-              <div style="font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1" id="pkgPickTotal">€600</div>
+              <div style="font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1" id="pkgPickTotal">$550</div>
             </div>
           </div>
 
@@ -933,7 +908,7 @@ a{text-decoration:none;color:inherit}
   <div class="cta-band-title">Ready to <em>Launch Your IPTV Business?</em></div>
   <div class="cta-band-sub">Join 50,000+ satisfied subscribers and hundreds of reseller partners who trust one4k. Start earning today.</div>
   <div class="cta-btns">
-    <button class="cta-btn cta-btn-primary" onclick="rsOpenFromCard(30,600)">
+    <button class="cta-btn cta-btn-primary" onclick="rsOpenFromCard(240,550)">
       <i class="fas fa-rocket" aria-hidden="true"></i> Apply for Reseller Access
     </button>
     <a href="/contact-us" class="cta-btn cta-btn-ghost">
@@ -947,7 +922,7 @@ a{text-decoration:none;color:inherit}
   <div class="footer-wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="footer-brand-icon"><img decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAC/VBMVEUAAAD//4AA//+qqqpVVar/AICqAKqAAIAzM2br2Ik7O4nb24CvUGBHxuMsT6cAPnK3MFBN1f/033CvX4cvR68+1+11Hl/ZLmfeZlQ50+71j1wzNpy6LY30uFKpJ13xhY8rir9bNJQfOWsmZqMv1O3nd2OSKpv5x23DKl/4mlcsm9wi2vTIiJn0clI9KWt8NLQrS7ki2/X6wG7POFz0jEu6LmIlbM77zl8j1/TALZUuO7HyN2IhrOhVKXz7p1LWNFdyNaxVNqOMHmH5T1o9ttf8wFXDipBLic0wNaf3slD1jkjtbFuZJWMtMqgfy+/5WFMdqeleKof70Fb8tVH4lUYc1/gkze/xakkZmeLxQ2P2LI/cMljPMFm2Ko+yJ2SdJ5l2MbYkV8hYL6IqPrd+IWQqOLNDLJI6JG7/2lr8x1P9v1T+uFP7r0//pE39pD79llsg5P77lkgn3v001ftDzfT/goj/hmX8jEVcvOj9g0xftd/6dYz7e2cX0ff7fEr8c2smxeoXyvX8dU5fqdv3cWYaw/T/YJX7aG36bFIxtt0YvvH2ZWseuub8ZVEZt+3xZkz3Wm8ZsOpgjN36WFH8S3zuWkwYqObzTm/+QJL5TlXjSaIcotkfodbsUVePcaMZn+O0X4/zRlr0QG1je7X7NogmkeLzM6g5jMUgltMaluHfSWX1Om/kSFH3OF8ciuDkLa0cid7hO1/xLmwkhcRAc9AchssahNfONJdmZ6CbTYfJLLEcfNbSNVrfKm/QKJ4fd9C1NZnDLZrbLVscddYdebxWWr3RLlshdrRwVJPQK1sibczLKWuvKqkebNCvKafLJHPFKmGfK6m7JX6rKJUgaa4daq8gYsy5KGKFMLJQT5ybJ5uILailJIomWMA8Tb6tJGMdX6ifJ2aKJ5yMJ5RtMKuhIWQfV6B7KZsnTMFsN3dfMKaNI2duKpNON5otQbYdTpeNH2MkSpZcKY8xN7QYSZRpJGlNKYcmPYVAKohDKXwYP3Z5E1ktMGo8I3MXMVwiGvx3AAAA8XRSTlMAAgIDAwIDAgUNDQ4QEh0dICswMzY6O0NGTFBQVVpoa2tra2xydnp8hI2Mj4+PlpianaOjqaussrS1u72/xcnL0NHT2dvc4eHk7ezt8vf7+/v7/Pz8/fz8/P39/Pz8/P39/f38/fz9/f/+/v////7////+///////+//////////7////+/////////v///////////////////////////v////////////////////////////7////////////////////////+/////v/////////////////////////////////////////////+DZGWvQAADHNJREFUeNrtmItfTHkfx8+caWbOUrlfo1WsS5asy7qtSw+7m7VauSRFqISUdNkutkJKNiqDEpWobU0hXaRNTZKUXAsVkiQVXYSSGur1fH4z5Snn9PwBz9N7zOvl1eu8fu/5fL+/3+/8zqG66aabbrrpppv/L0QURfP5fJpWorpGcQ2P4oBH+O8KPt1xIJrmFtAiihN++/Dwd4VizK/6DBgyZMiAASoMn1zOHo/8WWUALlLldc4gQB169gVwcKZRDKcyZNQMBzs7O/uV9vb2C8ePGgCtCN/O8VTIRfa7FqpQSh0UiNF3zPRlm8GyycN5XaUYMN5+O1hJDA7OO3Y4OzsvHNWHEgk6/5hR5GcYhISMQKYOEqovMSzDl/DjcFrwZbeJYoYdBACGQyeSk01urlkTffJEhFYfStDh+q++277SwGCXJOTnTgoef4zlFkvLLVuWLbNcvny55fThNCsHpfKdHQwEO+cTJoW5uTlxceHR4atXH93/07eoy+fWfLddz8DAQHI6RIv+jwU9mLxl+fKtsGzdts1q+aLhrCmGMg9Z2aawd4gwKTEpvCmNP3MmPPzowYP78e+nfpRQoOj5qO279PQMQhISJCM6dkQw2dLaymrrVstthEV9WfNLRAnGb7dzg8HNzW5HcklJCRTS+Pgz4UePEsv+/d6uX7eVTMXBYJfXLp8EIuF/lgioMVutra2Ara0tkgylGB6rVDO2r3SDAo49peWlJTlSKRxI0mbx9tzpOIEHC02NWgmHXnBmZsLpEXS7hC8YvtXGxhoaWydiGY7EX+aAY7cbYbfdnnI4oAA3palx4W1JPD09HadShBluPgcO7JJkZyYkoFztI/RcZGNDLDYuTk5O2+aycmC6zFjpJVfstt9RXf6m5ObdwpJyyEpLSkxyo+VJvD1dXR3H4fepLNQ7ABKyYfksEQgnWznaENxdYFnRj+Kx5tV4N6/dcgwcXpW/Kc8tL38D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" alt="one4k" loading="lazy" style="width:44px;height:44px;object-fit:contain;border-radius:0;display:block;background:transparent;"/></div>
+        <div class="footer-brand-icon"><img decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAC/VBMVEUAAAD//4AA//+qqqpVVar/AICqAKqAAIAzM2br2Ik7O4nb24CvUGBHxuMsT6cAPnK3MFBN1f/033CvX4cvR68+1+11Hl/ZLmfeZlQ50+71j1wzNpy6LY30uFKpJ13xhY8rir9bNJQfOWsmZqMv1O3nd2OSKpv5x23DKl/4mlcsm9wi2vTIiJn0clI9KWt8NLQrS7ki2/X6wG7POFz0jEu6LmIlbM77zl8j1/TALZUuO7HyN2IhrOhVKXz7p1LWNFdyNaxVNqOMHmH5T1o9ttf8wFXDipBLic0wNaf3slD1jkjtbFuZJWMtMqgfy+/5WFMdqeleKof70Fb8tVH4lUYc1/gkze/xakkZmeLxQ2P2LI/cMljPMFm2Ko+yJ2SdJ5l2MbYkV8hYL6IqPrd+IWQqOLNDLJI6JG7/2lr8x1P9v1T+uFP7r0//pE39pD79llsg5P77lkgn3v001ftDzfT/goj/hmX8jEVcvOj9g0xftd/6dYz7e2cX0ff7fEr8c2smxeoXyvX8dU5fqdv3cWYaw/T/YJX7aG36bFIxtt0YvvH2ZWseuub8ZVEZt+3xZkz3Wm8ZsOpgjN36WFH8S3zuWkwYqObzTm/+QJL5TlXjSaIcotkfodbsUVePcaMZn+O0X4/zRlr0QG1je7X7NogmkeLzM6g5jMUgltMaluHfSWX1Om/kSFH3OF8ciuDkLa0cid7hO1/xLmwkhcRAc9AchssahNfONJdmZ6CbTYfJLLEcfNbSNVrfKm/QKJ4fd9C1NZnDLZrbLVscddYdebxWWr3RLlshdrRwVJPQK1sibczLKWuvKqkebNCvKafLJHPFKmGfK6m7JX6rKJUgaa4daq8gYsy5KGKFMLJQT5ybJ5uILailJIomWMA8Tb6tJGMdX6ifJ2aKJ5yMJ5RtMKuhIWQfV6B7KZsnTMFsN3dfMKaNI2duKpNON5otQbYdTpeNH2MkSpZcKY8xN7QYSZRpJGlNKYcmPYVAKohDKXwYP3Z5E1ktMGo8I3MXMVwiGvx3AAAA8XRSTlMAAgIDAwIDAgUNDQ4QEh0dICswMzY6O0NGTFBQVVpoa2tra2xydnp8hI2Mj4+PlpianaOjqaussrS1u72/xcnL0NHT2dvc4eHk7ezt8vf7+/v7/Pz8/fz8/P39/Pz8/P39/f38/fz9/f/+/v////7////+///////+//////////7////+/////////v///////////////////////////v////////////////////////////7////////////////////////+/////v/////////////////////////////////////////////+DZGWvQAADHNJREFUeNrtmItfTHkfx8+caWbOUrlfo1WsS5asy7qtSw+7m7VauSRFqISUdNkutkJKNiqDEpWobU0hXaRNTZKUXAsVkiQVXYSSGur1fH4z5Snn9PwBz9N7zOvl1eu8fu/5fL+/3+/8zqG66aabbrrpppv/L0QURfP5fJpWorpGcQ2P4oBH+O8KPt1xIJrmFtAiihN++/Dwd4VizK/6DBgyZMiAASoMn1zOHo/8WWUALlLldc4gQB169gVwcKZRDKcyZNQMBzs7O/uV9vb2C8ePGgCtCN/O8VTIRfa7FqpQSh0UiNF3zPRlm8GyycN5XaUYMN5+O1hJDA7OO3Y4OzsvHNWHEgk6/5hR5GcYhISMQKYOEqovMSzDl/DjcFrwZbeJYoYdBACGQyeSk01urlkTffJEhFYfStDh+q++277SwGCXJOTnTgoef4zlFkvLLVuWLbNcvny55fThNCsHpfKdHQwEO+cTJoW5uTlxceHR4atXH93/07eoy+fWfLddz8DAQHI6RIv+jwU9mLxl+fKtsGzdts1q+aLhrCmGMg9Z2aawd4gwKTEpvCmNP3MmPPzowYP78e+nfpRQoOj5qO279PQMQhISJCM6dkQw2dLaymrrVstthEV9WfNLRAnGb7dzg8HNzW5HcklJCRTS+Pgz4UePEsv+/d6uX7eVTMXBYJfXLp8EIuF/lgioMVutra2Ara0tkgylGB6rVDO2r3SDAo49peWlJTlSKRxI0mbx9tzpOIEHC02NWgmHXnBmZsLpEXS7hC8YvtXGxhoaWydiGY7EX+aAY7cbYbfdnnI4oAA3palx4W1JPD09HadShBluPgcO7JJkZyYkoFztI/RcZGNDLDYuTk5O2+aycmC6zFjpJVfstt9RXf6m5ObdwpJyyEpLSkxyo+VJvD1dXR3H4fepLNQ7ABKyYfksEQgnWznaENxdYFnRj+Kx5tV4N6/dcgwcXpW/Kc8tL38D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" alt="one4k" loading="lazy" style="width:44px;height:44px;object-fit:contain;border-radius:0;display:block;background:transparent;"/></div>
         <div>
           <div class="footer-brand-name">one4k <span>Official IPTV</span></div>
           <div class="footer-brand-sub">The World&#39;s #1 Most Complete Streaming Service — <span class="js-year">2025</span></div>
@@ -1017,13 +992,13 @@ document.addEventListener('click',function(e){
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeNav();closeRsModal();}});
 
 /* ══ PACKAGE PICKER ══ */
-var rsCr=30, rsPrice=600;
+var rsCr=240, rsPrice=550;
 function pickPkg(el,cr,price){
   document.querySelectorAll('.pkg-pick').forEach(function(o){o.classList.remove('selected');});
   el.classList.add('selected');
   rsCr=cr; rsPrice=price;
   var label=cr+' Credits — Reseller Panel';
-  var amt='€'+price.toLocaleString();
+  var amt='$'+price.toLocaleString();
   document.getElementById('pkgPickLabel').textContent=label;
   document.getElementById('pkgPickTotal').textContent=amt;
 }
@@ -1038,14 +1013,14 @@ function rsOpenFromCard(cr,price){
   });
   // Update summary
   document.getElementById('pkgPickLabel').textContent=cr+' Credits — Reseller Panel';
-  document.getElementById('pkgPickTotal').textContent='€'+price.toLocaleString();
+  document.getElementById('pkgPickTotal').textContent='$'+price.toLocaleString();
   openResellerModal();
 }
 function openResellerModal(){
-  var label=rsCr+' Credits — €'+rsPrice.toLocaleString();
+  var label=rsCr+' Credits — $'+rsPrice.toLocaleString();
   document.getElementById('rsPkgLabel').textContent=label;
   document.getElementById('rsMpricePkg').textContent=rsCr+' Credits — Reseller Panel';
-  document.getElementById('rsMpriceAmt').textContent='€'+rsPrice.toLocaleString();
+  document.getElementById('rsMpriceAmt').textContent='$'+rsPrice.toLocaleString();
   // Reset form
   ['rsName','rsEmail','rsPhone','rsUser','rsPass'].forEach(function(id){
     var el=document.getElementById(id);if(el)el.value='';
@@ -1060,15 +1035,7 @@ function openResellerModal(){
 
 /* ══ Package card "Order Now" buttons → open modal ══ */
 function selectPkg(btn,cr,price){
-  rsCr=cr;rsPrice=price;
-  // Update picker highlight
-  document.querySelectorAll('.pkg-pick').forEach(function(el){
-    if(parseInt(el.getAttribute('data-cr'))===cr)el.classList.add('selected');
-    else el.classList.remove('selected');
-  });
-  document.getElementById('pkgPickLabel').textContent=cr+' Credits — Reseller Panel';
-  document.getElementById('pkgPickTotal').textContent='€'+price.toLocaleString();
-  openResellerModal();
+  rsOpenFromCard(cr,price);
 }
 
 function closeRsModal(){
@@ -1095,7 +1062,7 @@ function rsSubmitOrder(channel){
     alert('⚠️ Please fill in all required fields.');return;
   }
   if(!rsSelectedPay){alert('⚠️ Please select a payment method.');return;}
-  var pkg=rsCr+' Credits — €'+rsPrice.toLocaleString();
+  var pkg=rsCr+' Credits — $'+rsPrice.toLocaleString();
 
   // Background dispatch to Telegram Bot & Google Sheets (non-blocking)
   try {
@@ -1104,7 +1071,7 @@ function rsSubmitOrder(channel){
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         plan: 'Reseller: ' + pkg,
-        amount: '€' + rsPrice.toLocaleString(),
+        amount: '$' + rsPrice.toLocaleString(),
         name: name,
         email: email,
         phone: phone,
@@ -1159,11 +1126,9 @@ function rsSubmitOrder(channel){
 
   /* ══ openModal compatibility (called by pkg-card buttons) ══ */
   function openModal(plan, price){
-    // plan e.g. "30 Credits — Professional", extract credit count
     var match = String(plan).match(/^(\d+)/);
     rsCr = match ? parseInt(match[1]) : price;
     rsPrice = price;
-    // Try to highlight the matching picker
     document.querySelectorAll('.pkg-pick').forEach(function(el){
       var cr = parseInt(el.getAttribute('data-cr'));
       if(cr === rsCr) el.classList.add('selected');
@@ -1172,7 +1137,7 @@ function rsSubmitOrder(channel){
     var lbl = document.getElementById('pkgPickLabel');
     var tot = document.getElementById('pkgPickTotal');
     if(lbl) lbl.textContent = rsCr + ' Credits — Reseller Panel';
-    if(tot) tot.textContent = '€' + price.toLocaleString();
+    if(tot) tot.textContent = '$' + price.toLocaleString();
     openResellerModal();
   }
 
@@ -1187,7 +1152,7 @@ function rsSubmitOrder(channel){
         <div class="rs-modal-icon" aria-hidden="true">🏪</div>
         <div class="rs-modal-title">Reseller Application</div>
         <div style="font-size:.78rem;color:var(--muted);margin-top:3px">Fill in your details to activate your panel</div>
-        <div class="rs-modal-pkg" id="rsPkgLabel">30 Credits — €600</div>
+        <div class="rs-modal-pkg" id="rsPkgLabel">240 Credits — $550</div>
       </div>
       <button class="rs-modal-close" onclick="closeRsModal()" aria-label="Close">
         <i class="fas fa-xmark" aria-hidden="true"></i>
@@ -1236,9 +1201,9 @@ function rsSubmitOrder(channel){
         <div class="rs-mprice">
           <div>
             <div class="rs-mprice-label">Total Due</div>
-            <div class="rs-mprice-pkg" id="rsMpricePkg">30 Credits — Reseller Panel</div>
+            <div class="rs-mprice-pkg" id="rsMpricePkg">240 Credits — Reseller Panel</div>
           </div>
-          <div><div class="rs-mprice-amt" id="rsMpriceAmt">€600</div></div>
+          <div><div class="rs-mprice-amt" id="rsMpriceAmt">$550</div></div>
         </div>
         <div>
           <div style="font-family:'Oswald',sans-serif;font-size:.68rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:9px">
