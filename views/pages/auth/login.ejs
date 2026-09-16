@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#" class="loading-site no-js">
+<head>
+<%- include('../../layouts/head') %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<title><%= pageTitle || 'Customer Login — one4k Official IPTV' %></title>
+</head>
+<body class="wp-singular wp-theme-flatsome" style="background: #060814; color: #fff;">
+<div id="wrapper">
+<%- include('../../partials/header') %>
+
+<main id="main" style="padding: 120px 20px 80px; min-height: 80vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at 50% 20%, rgba(123,92,255,0.08), transparent 70%), #060814;">
+  <div style="width: 100%; max-width: 480px; background: linear-gradient(160deg, #0e1128, #12103a); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 40px 32px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); position: relative; overflow: hidden;">
+    
+    <!-- Background Glow -->
+    <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(123,92,255,0.25), transparent 70%); filter: blur(30px); pointer-events: none;"></div>
+
+    <div style="text-align: center; margin-bottom: 28px;">
+      <div style="font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--cyan, #40cfff); margin-bottom: 6px;">
+        Official IPTV Portal
+      </div>
+      <h1 style="font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700; text-transform: uppercase; color: #fff; margin: 0; letter-spacing: 0.02em;">
+        Customer <span style="background: linear-gradient(135deg, #40cfff, #7b5cff); -webkit-background-clip: text; background-clip: text; color: transparent;">Login</span>
+      </h1>
+      <p style="font-size: 0.84rem; color: var(--muted, #94a3b8); margin-top: 6px;">Access your subscriptions, playlists, and support panel.</p>
+    </div>
+
+    <div id="loginAlert" style="display: none; padding: 12px 16px; border-radius: 12px; font-size: 0.84rem; margin-bottom: 20px; line-height: 1.5;"></div>
+
+    <form id="loginForm" onsubmit="handleLogin(event)" style="display: flex; flex-direction: column; gap: 16px;">
+      <div>
+        <label for="loginEmail" style="display: block; font-family: 'Oswald', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #94a3b8); margin-bottom: 6px;">
+          Email Address <span style="color: #f87171;">*</span>
+        </label>
+        <input type="email" id="loginEmail" required placeholder="your@email.com" autocomplete="email" style="width: 100%; height: 46px; padding: 0 14px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 0.90rem; outline: none; transition: border-color 0.2s;">
+      </div>
+
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <label for="loginPass" style="font-family: 'Oswald', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #94a3b8);">
+            Password <span style="color: #f87171;">*</span>
+          </label>
+          <a href="https://wa.me/447311129243?text=Hello,%20I%20forgot%20my%20one4k%20account%20password" target="_blank" style="font-size: 0.72rem; color: var(--cyan, #40cfff); text-decoration: none;">Forgot?</a>
+        </div>
+        <input type="password" id="loginPass" required placeholder="Enter your password" autocomplete="current-password" style="width: 100%; height: 46px; padding: 0 14px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 0.90rem; outline: none; transition: border-color 0.2s;">
+      </div>
+
+      <button type="submit" id="submitLoginBtn" style="width: 100%; height: 50px; border-radius: 12px; border: none; cursor: pointer; background: linear-gradient(135deg, #7b5cff, #f040c8); color: #fff; font-family: 'Oswald', sans-serif; font-size: 0.96rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 8px; box-shadow: 0 8px 24px rgba(123,92,255,0.3); transition: transform 0.2s;">
+        Sign In
+      </button>
+    </form>
+
+    <div style="text-align: center; margin-top: 24px; font-size: 0.82rem; color: var(--muted, #94a3b8);">
+      Don't have an account yet? <a href="/register" style="color: #40cfff; text-decoration: none; font-weight: 600;">Create Account</a>
+    </div>
+
+  </div>
+</main>
+
+<script>
+async function handleLogin(e) {
+  e.preventDefault();
+  const alertEl = document.getElementById('loginAlert');
+  const btn = document.getElementById('submitLoginBtn');
+  const email = document.getElementById('loginEmail').value.trim();
+  const password = document.getElementById('loginPass').value;
+
+  alertEl.style.display = 'none';
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
+
+  try {
+    const res = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+    const data = await res.json();
+
+    alertEl.style.display = 'block';
+    if (data.success) {
+      alertEl.style.background = 'rgba(52,211,153,0.15)';
+      alertEl.style.border = '1px solid rgba(52,211,153,0.35)';
+      alertEl.style.color = '#34d399';
+      alertEl.innerHTML = '✅ ' + data.message + ' Redirecting...';
+      setTimeout(() => { window.location.href = '/'; }, 1000);
+    } else {
+      alertEl.style.background = 'rgba(239,68,68,0.15)';
+      alertEl.style.border = '1px solid rgba(239,68,68,0.35)';
+      alertEl.style.color = '#fca5a5';
+      if (data.isUnverified) {
+        alertEl.innerHTML = `⚠️ ${data.message} <br><a href="/verify-notice?email=${encodeURIComponent(data.email)}" style="color:#fff;text-decoration:underline;margin-top:6px;display:inline-block;">Click here to resend verification link</a>`;
+      } else {
+        alertEl.textContent = '⚠️ ' + data.message;
+      }
+    }
+  } catch (err) {
+    alertEl.style.display = 'block';
+    alertEl.style.background = 'rgba(239,68,68,0.15)';
+    alertEl.style.color = '#fca5a5';
+    alertEl.textContent = '⚠️ Network error. Please try again.';
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = 'Sign In';
+  }
+}
+</script>
+
+<%- include('../../partials/footer') %>
+</div>
+<%- include('../../partials/mobile-menu') %>
+<%- include('../../partials/scripts') %>
+</body>
+</html>

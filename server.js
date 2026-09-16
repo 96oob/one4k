@@ -7,9 +7,14 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 const appConfig = require('./config/app.config');
+const connectDB = require('./config/db.config');
 const indexRoutes = require('./routes/index.routes');
 const apiRoutes = require('./routes/api.routes');
+const authRoutes = require('./routes/auth.routes');
 const pageController = require('./controllers/page.controller');
+
+// Initialize MongoDB Atlas Connection
+connectDB();
 
 const app = express();
 const PORT = appConfig.port || 3000;
@@ -61,6 +66,7 @@ app.use((req, res, next) => {
 });
 
 // App Routes
+app.use('/', authRoutes);
 app.use('/', indexRoutes);
 app.use('/api', apiRoutes);
 

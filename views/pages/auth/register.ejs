@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#" class="loading-site no-js">
+<head>
+<%- include('../../layouts/head') %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<title><%= pageTitle || 'Create Account — one4k Official IPTV' %></title>
+</head>
+<body class="wp-singular wp-theme-flatsome" style="background: #060814; color: #fff;">
+<div id="wrapper">
+<%- include('../../partials/header') %>
+
+<main id="main" style="padding: 120px 20px 80px; min-height: 80vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at 50% 20%, rgba(64,207,255,0.08), transparent 70%), #060814;">
+  <div style="width: 100%; max-width: 520px; background: linear-gradient(160deg, #0e1128, #12103a); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 40px 32px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); position: relative; overflow: hidden;">
+    
+    <!-- Background Glow -->
+    <div style="position: absolute; top: -50px; left: -50px; width: 220px; height: 220px; background: radial-gradient(circle, rgba(64,207,255,0.22), transparent 70%); filter: blur(30px); pointer-events: none;"></div>
+
+    <div style="text-align: center; margin-bottom: 28px;">
+      <div style="font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--cyan, #40cfff); margin-bottom: 6px;">
+        Official IPTV Registration
+      </div>
+      <h1 style="font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700; text-transform: uppercase; color: #fff; margin: 0; letter-spacing: 0.02em;">
+        Create <span style="background: linear-gradient(135deg, #40cfff, #7b5cff); -webkit-background-clip: text; background-clip: text; color: transparent;">Account</span>
+      </h1>
+      <p style="font-size: 0.84rem; color: var(--muted, #94a3b8); margin-top: 6px;">Fill in your details to activate your streaming subscription.</p>
+    </div>
+
+    <div id="registerAlert" style="display: none; padding: 12px 16px; border-radius: 12px; font-size: 0.84rem; margin-bottom: 20px; line-height: 1.5;"></div>
+
+    <form id="registerForm" onsubmit="handleRegister(event)" style="display: flex; flex-direction: column; gap: 14px;">
+      <div>
+        <label for="regName" style="display: block; font-family: 'Oswald', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #94a3b8); margin-bottom: 6px;">
+          Full Name <span style="color: #f87171;">*</span>
+        </label>
+        <input type="text" id="regName" required placeholder="Your full name" autocomplete="name" style="width: 100%; height: 46px; padding: 0 14px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 0.90rem; outline: none;">
+      </div>
+
+      <div>
+        <label for="regPhone" style="display: block; font-family: 'Oswald', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #94a3b8); margin-bottom: 6px;">
+          WhatsApp Number <span style="color: #f87171;">*</span>
+        </label>
+        <input type="tel" id="regPhone" required placeholder="+212 600 000 000" autocomplete="tel" style="width: 100%; height: 46px; padding: 0 14px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 0.90rem; outline: none;">
+      </div>
+
+      <div>
+        <label for="regEmail" style="display: block; font-family: 'Oswald', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #94a3b8); margin-bottom: 6px;">
+          Email Address <span style="color: #f87171;">*</span>
+        </label>
+        <input type="email" id="regEmail" required placeholder="your@email.com" autocomplete="email" style="width: 100%; height: 46px; padding: 0 14px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 0.90rem; outline: none;">
+      </div>
+
+      <div>
+        <label for="regPass" style="display: block; font-family: 'Oswald', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #94a3b8); margin-bottom: 6px;">
+          Password <span style="color: #f87171;">*</span> (min. 6 chars)
+        </label>
+        <input type="password" id="regPass" required minlength="6" placeholder="Choose a secure password" autocomplete="new-password" style="width: 100%; height: 46px; padding: 0 14px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 0.90rem; outline: none;">
+      </div>
+
+      <button type="submit" id="submitRegBtn" style="width: 100%; height: 50px; border-radius: 12px; border: none; cursor: pointer; background: linear-gradient(135deg, #40cfff, #7b5cff); color: #060814; font-family: 'Oswald', sans-serif; font-size: 0.96rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 10px; box-shadow: 0 8px 24px rgba(64,207,255,0.3); transition: transform 0.2s;">
+        Register & Activate
+      </button>
+    </form>
+
+    <div style="text-align: center; margin-top: 24px; font-size: 0.82rem; color: var(--muted, #94a3b8);">
+      Already have an account? <a href="/login" style="color: #40cfff; text-decoration: none; font-weight: 600;">Sign In</a>
+    </div>
+
+  </div>
+</main>
+
+<script>
+async function handleRegister(e) {
+  e.preventDefault();
+  const alertEl = document.getElementById('registerAlert');
+  const btn = document.getElementById('submitRegBtn');
+  const name = document.getElementById('regName').value.trim();
+  const phone = document.getElementById('regPhone').value.trim();
+  const email = document.getElementById('regEmail').value.trim();
+  const password = document.getElementById('regPass').value;
+
+  alertEl.style.display = 'none';
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating Account...';
+
+  try {
+    const res = await fetch('/api/auth/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, phone, email, password })
+    });
+    const data = await res.json();
+
+    alertEl.style.display = 'block';
+    if (data.success) {
+      alertEl.style.background = 'rgba(52,211,153,0.15)';
+      alertEl.style.border = '1px solid rgba(52,211,153,0.35)';
+      alertEl.style.color = '#34d399';
+      alertEl.innerHTML = '✅ ' + data.message + ' Redirecting to confirmation...';
+      setTimeout(() => {
+        window.location.href = data.redirectUrl || `/verify-notice?email=${encodeURIComponent(data.email)}`;
+      }, 1200);
+    } else {
+      alertEl.style.background = 'rgba(239,68,68,0.15)';
+      alertEl.style.border = '1px solid rgba(239,68,68,0.35)';
+      alertEl.style.color = '#fca5a5';
+      alertEl.textContent = '⚠️ ' + data.message;
+    }
+  } catch (err) {
+    alertEl.style.display = 'block';
+    alertEl.style.background = 'rgba(239,68,68,0.15)';
+    alertEl.style.color = '#fca5a5';
+    alertEl.textContent = '⚠️ Network error. Please try again.';
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = 'Register & Activate';
+  }
+}
+</script>
+
+<%- include('../../partials/footer') %>
+</div>
+<%- include('../../partials/mobile-menu') %>
+<%- include('../../partials/scripts') %>
+</body>
+</html>

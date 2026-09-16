@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#" class="loading-site no-js">
+<head>
+<%- include('../../layouts/head') %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<title><%= pageTitle || 'Email Verified — one4k Official IPTV' %></title>
+</head>
+<body class="wp-singular wp-theme-flatsome" style="background: #060814; color: #fff;">
+<div id="wrapper">
+<%- include('../../partials/header') %>
+
+<main id="main" style="padding: 120px 20px 80px; min-height: 80vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at 50% 20%, rgba(52,211,153,0.08), transparent 70%), #060814;">
+  <div style="width: 100%; max-width: 520px; background: linear-gradient(160deg, #0e1128, #12103a); border: 1px solid rgba(52,211,153,0.3); border-radius: 24px; padding: 40px 32px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); text-align: center; position: relative; overflow: hidden;">
+    
+    <!-- Background Glow -->
+    <div style="position: absolute; top: -40px; left: 50%; transform: translateX(-50%); width: 240px; height: 120px; background: radial-gradient(circle, rgba(52,211,153,0.25), transparent 70%); filter: blur(30px); pointer-events: none;"></div>
+
+    <div style="width: 76px; height: 76px; margin: 0 auto 20px; border-radius: 22px; background: linear-gradient(135deg, rgba(52,211,153,0.2), rgba(16,185,129,0.1)); border: 1px solid rgba(52,211,153,0.4); display: flex; align-items: center; justify-content: center; font-size: 34px; color: #34d399;">
+      <i class="fas fa-circle-check"></i>
+    </div>
+
+    <h1 style="font-family: 'Oswald', sans-serif; font-size: 1.9rem; font-weight: 700; text-transform: uppercase; color: #fff; margin-bottom: 10px; letter-spacing: 0.02em;">
+      Email <span style="color: #34d399;">Verified!</span>
+    </h1>
+
+    <p style="font-size: 0.95rem; color: var(--soft, #e2e8f0); line-height: 1.6; margin-bottom: 24px;">
+      Your email address <strong style="color: #fff;"><%= email || '' %></strong> has been successfully verified.
+    </p>
+
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 20px; text-align: left; margin-bottom: 28px;">
+      <div style="font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; color: #34d399; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+        <i class="fas fa-key"></i> Access Credentials Sent
+      </div>
+      <p style="font-size: 0.82rem; color: var(--muted, #94a3b8); line-height: 1.5; margin: 0;">
+        We have automatically generated your portal login & subscription details and sent a confirmation email to your inbox. You can now log in or contact WhatsApp VIP support directly.
+      </p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <a href="/login" style="display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #34d399, #059669); color: #060814; font-family: 'Oswald', sans-serif; font-size: 0.92rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; text-decoration: none; box-shadow: 0 8px 24px rgba(52,211,153,0.3);">
+        Go to Customer Login
+      </a>
+      <a href="https://wa.me/447311129243?text=Hello%20one4k%20Team,%20I%20have%20verified%20my%20email%20and%20want%20to%20activate%20my%20subscription" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 48px; border-radius: 12px; background: rgba(37,211,102,0.12); border: 1px solid rgba(37,211,102,0.3); color: #25d366; font-family: 'Oswald', sans-serif; font-size: 0.88rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none;">
+        <i class="fab fa-whatsapp" style="margin-right: 8px; font-size: 1.1rem;"></i> Contact VIP WhatsApp Support
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<%- include('../../partials/footer') %>
+</div>
+<%- include('../../partials/mobile-menu') %>
+<%- include('../../partials/scripts') %>
+</body>
+</html>

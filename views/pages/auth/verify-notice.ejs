@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#" class="loading-site no-js">
+<head>
+<%- include('../../layouts/head') %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<title><%= pageTitle || 'Verify Your Email — one4k Official IPTV' %></title>
+</head>
+<body class="wp-singular wp-theme-flatsome" style="background: #060814; color: #fff;">
+<div id="wrapper">
+<%- include('../../partials/header') %>
+
+<main id="main" style="padding: 120px 20px 80px; min-height: 80vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at 50% 20%, rgba(64,207,255,0.08), transparent 70%), #060814;">
+  <div style="width: 100%; max-width: 520px; background: linear-gradient(160deg, #0e1128, #12103a); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 40px 32px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); text-align: center; position: relative; overflow: hidden;">
+    
+    <!-- Background Glow -->
+    <div style="position: absolute; top: -40px; left: 50%; transform: translateX(-50%); width: 220px; height: 120px; background: radial-gradient(circle, rgba(64,207,255,0.25), transparent 70%); filter: blur(30px); pointer-events: none;"></div>
+
+    <div style="width: 70px; height: 70px; margin: 0 auto 20px; border-radius: 20px; background: linear-gradient(135deg, rgba(64,207,255,0.15), rgba(123,92,255,0.15)); border: 1px solid rgba(64,207,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 30px; color: var(--cyan, #40cfff);">
+      <i class="fas fa-envelope-open-text"></i>
+    </div>
+
+    <% if (error) { %>
+      <div style="background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); border-radius: 12px; padding: 12px 16px; font-size: 0.85rem; color: #fca5a5; margin-bottom: 20px; text-align: left;">
+        <i class="fas fa-circle-exclamation" style="margin-right: 6px;"></i> <%= error %>
+      </div>
+    <% } %>
+
+    <h1 style="font-family: 'Oswald', sans-serif; font-size: 1.8rem; font-weight: 700; text-transform: uppercase; color: #fff; margin-bottom: 10px; letter-spacing: 0.02em;">
+      Check Your <span style="background: linear-gradient(135deg, #40cfff, #7b5cff); -webkit-background-clip: text; background-clip: text; color: transparent;">Email</span>
+    </h1>
+
+    <p style="font-size: 0.92rem; color: var(--soft, #e2e8f0); line-height: 1.6; margin-bottom: 18px;">
+      We have sent a verification link to your email address:
+    </p>
+
+    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(64,207,255,0.25); border-radius: 12px; padding: 12px 18px; display: inline-block; font-family: monospace; font-size: 0.95rem; color: var(--cyan, #40cfff); margin-bottom: 24px; max-width: 100%; word-break: break-all;">
+      <%= email || 'your email address' %>
+    </div>
+
+    <p style="font-size: 0.82rem; color: var(--muted, #94a3b8); line-height: 1.5; margin-bottom: 28px;">
+      Please click the verification button inside the email to activate your one4k IPTV subscription and receive your instant portal credentials.
+    </p>
+
+    <!-- Resend Section -->
+    <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px;">
+      <p style="font-size: 0.82rem; color: var(--muted, #94a3b8); margin-bottom: 12px;">
+        Didn't receive the email? Check your Spam / Junk folder or request a new one:
+      </p>
+
+      <div id="resendAlert" style="display: none; padding: 10px 14px; border-radius: 10px; font-size: 0.82rem; margin-bottom: 14px; text-align: left;"></div>
+
+      <div style="display: flex; gap: 8px; max-width: 380px; margin: 0 auto;">
+        <input type="email" id="resendEmailInput" value="<%= email || '' %>" placeholder="Enter your email" style="flex: 1; height: 42px; padding: 0 12px; border-radius: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 0.85rem; outline: none;">
+        <button type="button" id="resendBtn" onclick="handleResend()" style="height: 42px; padding: 0 18px; border-radius: 10px; border: none; cursor: pointer; background: rgba(64,207,255,0.15); border: 1px solid rgba(64,207,255,0.3); color: #40cfff; font-family: 'Oswald', sans-serif; font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s;">
+          Resend
+        </button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script>
+async function handleResend() {
+  const alertEl = document.getElementById('resendAlert');
+  const btn = document.getElementById('resendBtn');
+  const email = document.getElementById('resendEmailInput').value.trim();
+
+  if (!email) {
+    alertEl.style.display = 'block';
+    alertEl.style.background = 'rgba(239,68,68,0.15)';
+    alertEl.style.color = '#fca5a5';
+    alertEl.textContent = 'Please provide your email address.';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  alertEl.style.display = 'none';
+
+  try {
+    const res = await fetch('/api/auth/resend-verification', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+    const data = await res.json();
+
+    alertEl.style.display = 'block';
+    if (data.success) {
+      alertEl.style.background = 'rgba(52,211,153,0.15)';
+      alertEl.style.color = '#34d399';
+      alertEl.textContent = '✅ ' + data.message;
+    } else {
+      alertEl.style.background = 'rgba(239,68,68,0.15)';
+      alertEl.style.color = '#fca5a5';
+      alertEl.textContent = '⚠️ ' + data.message;
+    }
+  } catch (err) {
+    alertEl.style.display = 'block';
+    alertEl.style.background = 'rgba(239,68,68,0.15)';
+    alertEl.style.color = '#fca5a5';
+    alertEl.textContent = '⚠️ Failed to connect to server.';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Resend';
+  }
+}
+</script>
+
+<%- include('../../partials/footer') %>
+</div>
+<%- include('../../partials/mobile-menu') %>
+<%- include('../../partials/scripts') %>
+</body>
+</html>
