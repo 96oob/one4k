@@ -1,0 +1,565 @@
+<!-- ═══ ONE4K AUTH MODAL (REGISTER & LOGIN) ═══ -->
+<div class="auth-modal-overlay" id="authModal" onclick="closeAuthModalOutside(event)" role="dialog" aria-modal="true" aria-label="Customer Account">
+  <div class="auth-modal">
+    
+    <!-- Background Ambient Glow -->
+    <div class="auth-modal-glow"></div>
+
+    <!-- Header & Close -->
+    <div class="auth-modal-header">
+      <div class="auth-modal-brand">
+        <div class="auth-modal-badge">Official IPTV Portal</div>
+        <div class="auth-modal-title" id="authModalTitle">Welcome to <span class="text-grad">one4k</span></div>
+      </div>
+      <button class="auth-modal-close" onclick="closeAuthModal()" aria-label="Close dialog">
+        <i class="fas fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Mode Switcher Tabs -->
+    <div class="auth-tabs">
+      <button type="button" class="auth-tab-btn active" id="tabRegisterBtn" onclick="switchAuthTab('register')">
+        <i class="fas fa-user-plus"></i> Create Account
+      </button>
+      <button type="button" class="auth-tab-btn" id="tabLoginBtn" onclick="switchAuthTab('login')">
+        <i class="fas fa-sign-in-alt"></i> Sign In
+      </button>
+    </div>
+
+    <!-- Alert Box -->
+    <div id="authAlert" class="auth-alert" style="display: none;"></div>
+
+    <!-- ══ REGISTER FORM ══ -->
+    <form id="authRegisterForm" class="auth-form-body" onsubmit="submitAuthRegister(event)">
+      <div class="auth-input-group">
+        <label for="popupRegName">Full Name <span class="req-star">*</span></label>
+        <div class="auth-input-wrapper">
+          <i class="fas fa-user auth-icon"></i>
+          <input type="text" id="popupRegName" required placeholder="e.g. John Doe" autocomplete="name">
+        </div>
+      </div>
+
+      <div class="auth-input-group">
+        <label for="popupRegPhone">WhatsApp Number <span class="req-star">*</span></label>
+        <div class="auth-input-wrapper">
+          <i class="fab fa-whatsapp auth-icon" style="color: #25d366;"></i>
+          <input type="tel" id="popupRegPhone" required placeholder="+212 600 000 000" autocomplete="tel">
+        </div>
+      </div>
+
+      <div class="auth-input-group">
+        <label for="popupRegEmail">Email Address <span class="req-star">*</span></label>
+        <div class="auth-input-wrapper">
+          <i class="fas fa-envelope auth-icon"></i>
+          <input type="email" id="popupRegEmail" required placeholder="your@email.com" autocomplete="email">
+        </div>
+      </div>
+
+      <div class="auth-input-group">
+        <label for="popupRegPass">Password <span class="req-star">*</span> <small style="color: var(--muted, #94a3b8);">(min. 6 chars)</small></label>
+        <div class="auth-input-wrapper">
+          <i class="fas fa-lock auth-icon"></i>
+          <input type="password" id="popupRegPass" required minlength="6" placeholder="Choose a password" autocomplete="new-password">
+          <button type="button" class="auth-pass-toggle" onclick="togglePassVisibility('popupRegPass', this)" aria-label="Toggle password visibility">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <button type="submit" id="popupRegSubmitBtn" class="auth-submit-btn auth-submit-register">
+        <span>Create Account & Verify</span>
+        <i class="fas fa-arrow-right"></i>
+      </button>
+
+      <div class="auth-footer-note">
+        By registering, you agree to our Terms of Service & Privacy Policy.
+      </div>
+    </form>
+
+    <!-- ══ LOGIN FORM ══ -->
+    <form id="authLoginForm" class="auth-form-body" onsubmit="submitAuthLogin(event)" style="display: none;">
+      <div class="auth-input-group">
+        <label for="popupLoginEmail">Email Address <span class="req-star">*</span></label>
+        <div class="auth-input-wrapper">
+          <i class="fas fa-envelope auth-icon"></i>
+          <input type="email" id="popupLoginEmail" required placeholder="your@email.com" autocomplete="email">
+        </div>
+      </div>
+
+      <div class="auth-input-group">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+          <label for="popupLoginPass" style="margin: 0;">Password <span class="req-star">*</span></label>
+          <a href="https://wa.me/447311129243?text=Hello,%20I%20forgot%20my%20one4k%20account%20password" target="_blank" class="auth-forgot-link">Forgot?</a>
+        </div>
+        <div class="auth-input-wrapper">
+          <i class="fas fa-lock auth-icon"></i>
+          <input type="password" id="popupLoginPass" required placeholder="Enter your password" autocomplete="current-password">
+          <button type="button" class="auth-pass-toggle" onclick="togglePassVisibility('popupLoginPass', this)" aria-label="Toggle password visibility">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <button type="submit" id="popupLoginSubmitBtn" class="auth-submit-btn auth-submit-login">
+        <span>Sign In to Account</span>
+        <i class="fas fa-arrow-right"></i>
+      </button>
+
+      <div class="auth-footer-note">
+        Need assistance? Contact our <a href="https://wa.me/447311129243" target="_blank" style="color: #25d366; text-decoration: none; font-weight: 600;"><i class="fab fa-whatsapp"></i> 24/7 VIP WhatsApp Support</a>.
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<style>
+/* ═══ AUTH MODAL STYLES ═══ */
+.auth-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: rgba(4, 6, 18, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.auth-modal-overlay.open {
+  display: flex;
+  opacity: 1;
+}
+.auth-modal {
+  width: 100%;
+  max-width: 480px;
+  background: linear-gradient(165deg, #0e1128 0%, #12103a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.75), 0 0 40px rgba(123, 92, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+  max-height: 92vh;
+  overflow-y: auto;
+  transform: scale(0.95) translateY(10px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.auth-modal-overlay.open .auth-modal {
+  transform: scale(1) translateY(0);
+}
+.auth-modal-glow {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(123, 92, 255, 0.3), transparent 70%);
+  filter: blur(35px);
+  pointer-events: none;
+}
+.auth-modal-header {
+  padding: 24px 26px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.auth-modal-badge {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #40cfff;
+  margin-bottom: 4px;
+}
+.auth-modal-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.auth-modal-title .text-grad {
+  background: linear-gradient(135deg, #40cfff, #7b5cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.auth-modal-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+.auth-modal-close:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #f87171;
+  transform: rotate(90deg);
+}
+
+/* Tabs */
+.auth-tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 5px;
+  margin: 18px 24px 0;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 6px;
+}
+.auth-tab-btn {
+  flex: 1;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+.auth-tab-btn.active {
+  background: linear-gradient(135deg, rgba(64, 207, 255, 0.18), rgba(123, 92, 255, 0.22));
+  border: 1px solid rgba(64, 207, 255, 0.4);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(64, 207, 255, 0.15);
+}
+
+/* Form body */
+.auth-form-body {
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.auth-input-group {
+  display: flex;
+  flex-direction: column;
+}
+.auth-input-group label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  margin-bottom: 5px;
+}
+.req-star {
+  color: #f87171;
+}
+.auth-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.auth-icon {
+  position: absolute;
+  left: 14px;
+  font-size: 0.88rem;
+  color: #64748b;
+  pointer-events: none;
+}
+.auth-input-wrapper input {
+  width: 100%;
+  height: 44px;
+  padding: 0 40px 0 38px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.88rem;
+  outline: none;
+  transition: all 0.2s;
+}
+.auth-input-wrapper input:focus {
+  border-color: #40cfff;
+  background: rgba(64, 207, 255, 0.06);
+  box-shadow: 0 0 16px rgba(64, 207, 255, 0.2);
+}
+.auth-pass-toggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 0.85rem;
+}
+.auth-pass-toggle:hover {
+  color: #fff;
+}
+.auth-forgot-link {
+  font-size: 0.72rem;
+  color: #40cfff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.auth-forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* Submit Buttons */
+.auth-submit-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.94rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+  transition: all 0.2s;
+}
+.auth-submit-register {
+  background: linear-gradient(135deg, #40cfff 0%, #7b5cff 100%);
+  color: #060814;
+  box-shadow: 0 8px 24px rgba(64, 207, 255, 0.25);
+}
+.auth-submit-login {
+  background: linear-gradient(135deg, #7b5cff 0%, #f040c8 100%);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(123, 92, 255, 0.28);
+}
+.auth-submit-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+.auth-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Alert Box */
+.auth-alert {
+  margin: 14px 24px 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.auth-footer-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.4;
+  margin-top: 4px;
+}
+</style>
+
+<script>
+/* ═══ AUTH MODAL LOGIC ═══ */
+function openAuthModal(tab = 'register') {
+  const modal = document.getElementById('authModal');
+  if (!modal) return;
+  switchAuthTab(tab);
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAuthModal() {
+  const modal = document.getElementById('authModal');
+  if (!modal) return;
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+  hideAuthAlert();
+}
+
+function closeAuthModalOutside(e) {
+  if (e.target === document.getElementById('authModal')) {
+    closeAuthModal();
+  }
+}
+
+function switchAuthTab(tab) {
+  const regForm = document.getElementById('authRegisterForm');
+  const loginForm = document.getElementById('authLoginForm');
+  const regBtn = document.getElementById('tabRegisterBtn');
+  const loginBtn = document.getElementById('tabLoginBtn');
+  const title = document.getElementById('authModalTitle');
+
+  hideAuthAlert();
+
+  if (tab === 'login') {
+    if (regForm) regForm.style.display = 'none';
+    if (loginForm) loginForm.style.display = 'flex';
+    if (regBtn) regBtn.classList.remove('active');
+    if (loginBtn) loginBtn.classList.add('active');
+    if (title) title.innerHTML = 'Customer <span class="text-grad">Login</span>';
+  } else {
+    if (regForm) regForm.style.display = 'flex';
+    if (loginForm) loginForm.style.display = 'none';
+    if (regBtn) regBtn.classList.add('active');
+    if (loginBtn) loginBtn.classList.remove('active');
+    if (title) title.innerHTML = 'Create <span class="text-grad">Account</span>';
+  }
+}
+
+function showAuthAlert(type, message, htmlContent = null) {
+  const el = document.getElementById('authAlert');
+  if (!el) return;
+  el.style.display = 'block';
+  if (type === 'success') {
+    el.style.background = 'rgba(52, 211, 153, 0.15)';
+    el.style.border = '1px solid rgba(52, 211, 153, 0.35)';
+    el.style.color = '#34d399';
+    el.innerHTML = htmlContent || ('✅ ' + message);
+  } else {
+    el.style.background = 'rgba(239, 68, 68, 0.15)';
+    el.style.border = '1px solid rgba(239, 68, 68, 0.35)';
+    el.style.color = '#fca5a5';
+    el.innerHTML = htmlContent || ('⚠️ ' + message);
+  }
+}
+
+function hideAuthAlert() {
+  const el = document.getElementById('authAlert');
+  if (el) el.style.display = 'none';
+}
+
+function togglePassVisibility(inputId, btn) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+  if (input.type === 'password') {
+    input.type = 'text';
+    btn.innerHTML = '<i class="fas fa-eye-slash"></i>';
+  } else {
+    input.type = 'password';
+    btn.innerHTML = '<i class="fas fa-eye"></i>';
+  }
+}
+
+// Handle Register Submit
+async function submitAuthRegister(e) {
+  e.preventDefault();
+  const btn = document.getElementById('popupRegSubmitBtn');
+  const name = document.getElementById('popupRegName').value.trim();
+  const phone = document.getElementById('popupRegPhone').value.trim();
+  const email = document.getElementById('popupRegEmail').value.trim();
+  const password = document.getElementById('popupRegPass').value;
+
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Creating...</span>';
+  hideAuthAlert();
+
+  try {
+    const res = await fetch('/api/auth/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, phone, email, password })
+    });
+    const data = await res.json();
+
+    if (data.success) {
+      showAuthAlert('success', data.message);
+      setTimeout(() => {
+        window.location.href = data.redirectUrl || `/verify-notice?email=${encodeURIComponent(data.email)}`;
+      }, 1200);
+    } else {
+      showAuthAlert('error', data.message);
+      btn.disabled = false;
+      btn.innerHTML = '<span>Create Account & Verify</span> <i class="fas fa-arrow-right"></i>';
+    }
+  } catch (err) {
+    showAuthAlert('error', 'Network error. Please try again.');
+    btn.disabled = false;
+    btn.innerHTML = '<span>Create Account & Verify</span> <i class="fas fa-arrow-right"></i>';
+  }
+}
+
+// Handle Login Submit
+async function submitAuthLogin(e) {
+  e.preventDefault();
+  const btn = document.getElementById('popupLoginSubmitBtn');
+  const email = document.getElementById('popupLoginEmail').value.trim();
+  const password = document.getElementById('popupLoginPass').value;
+
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Signing In...</span>';
+  hideAuthAlert();
+
+  try {
+    const res = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+    const data = await res.json();
+
+    if (data.success) {
+      showAuthAlert('success', '✅ Login successful! Redirecting...');
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    } else {
+      if (data.isUnverified) {
+        showAuthAlert('error', '', `⚠️ ${data.message} <br><a href="/verify-notice?email=${encodeURIComponent(data.email)}" style="color:#fff;text-decoration:underline;margin-top:6px;display:inline-block;">Click here to resend verification link</a>`);
+      } else {
+        showAuthAlert('error', data.message);
+      }
+      btn.disabled = false;
+      btn.innerHTML = '<span>Sign In to Account</span> <i class="fas fa-arrow-right"></i>';
+    }
+  } catch (err) {
+    showAuthAlert('error', 'Network error. Please try again.');
+    btn.disabled = false;
+    btn.innerHTML = '<span>Sign In to Account</span> <i class="fas fa-arrow-right"></i>';
+  }
+}
+
+// Global click interceptor for any Register / Login link
+document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest('a');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    if (href === '/register' || href === '#register' || link.classList.contains('js-open-register')) {
+      e.preventDefault();
+      openAuthModal('register');
+    } else if (href === '/login' || href === '#login' || link.classList.contains('js-open-login')) {
+      e.preventDefault();
+      openAuthModal('login');
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeAuthModal();
+    }
+  });
+});
+</script>
