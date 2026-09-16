@@ -239,16 +239,16 @@
       font-size:.72rem;color:var(--muted);line-height:1.4;
     }
     .trial-actions{
-      display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;
-      margin-bottom:20px;
+      display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;
+      margin-bottom:24px;
     }
     .trial-btn{
-      display:inline-flex;align-items:center;gap:12px;
-      padding:16px 28px;border-radius:14px;
-      font-family:'DM Sans',sans-serif;font-size:.96rem;font-weight:700;
+      display:inline-flex;align-items:center;gap:14px;
+      padding:16px 26px;border-radius:16px;
+      font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;
       text-decoration:none;cursor:pointer;border:none;
       transition:all .28s var(--ease);
-      position:relative;overflow:hidden;
+      min-width:270px;position:relative;overflow:hidden;
     }
     .trial-btn-wa{
       background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);
@@ -270,9 +270,9 @@
       box-shadow:0 14px 40px rgba(240,64,200,.50);
       filter:brightness(1.08);
     }
-    .trial-btn-icon{font-size:1.25rem;}
+    .trial-btn-icon{font-size:1.35rem;flex-shrink:0;}
     .trial-btn-text{display:flex;flex-direction:column;text-align:left;}
-    .trial-btn-main{font-size:.96rem;font-weight:700;line-height:1.2;}
+    .trial-btn-main{font-size:.95rem;font-weight:700;line-height:1.2;}
     .trial-btn-sub{font-size:.70rem;font-weight:400;opacity:.88;margin-top:2px;}
     .trial-note{
       font-size:.78rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px;
@@ -331,17 +331,29 @@
     .contact-choice-label{font-size:.78rem;font-weight:600;color:var(--soft);margin-bottom:8px;}
     .contact-choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px;}
     .contact-btn{
-      height:50px;border-radius:12px;border:none;cursor:pointer;
-      display:flex;align-items:center;gap:10px;padding:0 14px;
-      font-family:'DM Sans',sans-serif;text-decoration:none;transition:all .2s;
+      display:flex;align-items:center;gap:12px;padding:13px 14px;
+      border-radius:14px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.04);
+      cursor:pointer;transition:all .22s ease;text-align:left;position:relative;overflow:hidden;width:100%;
     }
-    .contact-btn-wa{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;}
-    .contact-btn-email{background:linear-gradient(135deg,#7B5CFF,#5B3FD0);color:#fff;}
-    .contact-btn:hover{filter:brightness(1.10);transform:translateY(-1px);}
-    .contact-btn-icon{font-size:1.15rem;flex-shrink:0;}
-    .contact-btn-text{display:flex;flex-direction:column;text-align:left;}
-    .contact-btn-title{font-size:.82rem;font-weight:700;}
-    .contact-btn-sub{font-size:.62rem;opacity:.85;}
+    .contact-btn:hover{transform:translateY(-2px);}
+    .contact-btn-wa{border-color:rgba(37,211,102,.30);background:rgba(37,211,102,.07);}
+    .contact-btn-wa:hover{border-color:rgba(37,211,102,.55);background:rgba(37,211,102,.12);box-shadow:0 8px 24px rgba(37,211,102,.15);}
+    .contact-btn-email{border-color:rgba(123,92,255,.30);background:rgba(123,92,255,.07);}
+    .contact-btn-email:hover{border-color:rgba(123,92,255,.55);background:rgba(123,92,255,.12);box-shadow:0 8px 24px rgba(123,92,255,.15);}
+    .contact-btn-icon{
+      width:38px;height:38px;border-radius:11px;flex-shrink:0;display:grid;place-items:center;font-size:1.15rem;
+    }
+    .contact-btn-wa .contact-btn-icon{background:rgba(37,211,102,.18);color:#25D366;border:1px solid rgba(37,211,102,.28);}
+    .contact-btn-email .contact-btn-icon{background:rgba(123,92,255,.18);color:#c4b5fd;border:1px solid rgba(123,92,255,.28);}
+    .contact-btn-text{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0;}
+    .contact-btn-title{font-family:'Oswald',sans-serif;font-size:.90rem;font-weight:600;text-transform:uppercase;color:#fff;line-height:1.2;}
+    .contact-btn-sub{font-size:.67rem;color:var(--muted);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .contact-btn-badge{
+      font-size:.56rem;font-weight:700;padding:3px 8px;border-radius:99px;
+      background:rgba(37,211,102,.18);color:#6ee7b7;border:1px solid rgba(37,211,102,.26);
+      text-transform:uppercase;letter-spacing:.03em;margin-left:auto;flex-shrink:0;
+    }
+    .contact-btn-arrow{font-size:.72rem;color:var(--muted);margin-left:auto;flex-shrink:0;opacity:.7;}
     .modal-security{
       display:flex;align-items:center;justify-content:center;gap:5px;
       font-size:.68rem;color:var(--muted);text-align:center;margin-top:4px;
@@ -386,10 +398,11 @@
       .ch-hero{padding:40px 4% 36px;}
       .ch-stats{flex-wrap:wrap;border:none;gap:8px;background:transparent;}
       .ch-stat{flex:1;min-width:120px;border-radius:12px;border:1px solid rgba(255,255,255,.07);}
-      .trial-card{padding:36px 20px 32px;}
+      .trial-card{padding:32px 18px 28px;}
       .trial-perks{grid-template-columns:1fr;}
-      .trial-btn{width:100%;justify-content:center;}
-      .contact-choice-grid{grid-template-columns:1fr;}
+      .trial-actions{flex-direction:column;gap:12px;}
+      .trial-btn{width:100%;min-width:100%;padding:14px 18px;}
+      .contact-choice-grid{grid-template-columns:1fr;gap:10px;}
       .footer-links-group{grid-template-columns:1fr;}
       .footer-bottom{flex-direction:column;align-items:flex-start;}
     }
@@ -647,19 +660,21 @@
         <div>
           <div class="contact-choice-label">Submit Free Trial Request via:</div>
           <div class="contact-choice-grid">
-            <button class="contact-btn contact-btn-wa" onclick="submitTrial('whatsapp')">
-              <i class="fab fa-whatsapp contact-btn-icon"></i>
-              <span class="contact-btn-text">
+            <button class="contact-btn contact-btn-wa" onclick="submitTrial('whatsapp')" type="button">
+              <div class="contact-btn-icon" aria-hidden="true"><i class="fab fa-whatsapp"></i></div>
+              <div class="contact-btn-text">
                 <span class="contact-btn-title">WhatsApp</span>
-                <span class="contact-btn-sub">Fastest • &lt; 2 min</span>
-              </span>
+                <span class="contact-btn-sub">Fastest • Ready under 2 min</span>
+              </div>
+              <span class="contact-btn-badge">⚡ Instant</span>
             </button>
-            <button class="contact-btn contact-btn-email" onclick="submitTrial('email')">
-              <i class="fas fa-envelope contact-btn-icon"></i>
-              <span class="contact-btn-text">
+            <button class="contact-btn contact-btn-email" onclick="submitTrial('email')" type="button">
+              <div class="contact-btn-icon" aria-hidden="true"><i class="fas fa-envelope"></i></div>
+              <div class="contact-btn-text">
                 <span class="contact-btn-title">Email</span>
                 <span class="contact-btn-sub">TVBillingTeam@gmail.com</span>
-              </span>
+              </div>
+              <i class="fas fa-arrow-right contact-btn-arrow" aria-hidden="true"></i>
             </button>
           </div>
         </div>
